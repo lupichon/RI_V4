@@ -16,7 +16,7 @@ public class followLevier : MonoBehaviour
     private Rigidbody _rbShip;
     private float _grab;
 
-    private float rotationSpeed = 0.02f;
+    private float rotationSpeed = 0.2f;
     private float movementSpeed = 1.0f;
 
     Vector3 rot = Vector3.zero;
@@ -55,12 +55,14 @@ public class followLevier : MonoBehaviour
         Quaternion finalRotation = combinedRotations;// * lookRotation;
         _tfShip.rotation = Quaternion.RotateTowards(rotation, finalRotation, 0.1f);
         */
-        rot.x += rotationSpeed* Mathf.Sin(_tfRotLevier.localEulerAngles.x);
-        rot.z += rotationSpeed * Mathf.Sin(_tfRotLevier.localEulerAngles.z);
+        rot.x += rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime;
+        rot.z += rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime;
         _tfShip.Rotate(rot.x, rot.y, rot.z, Space.Self);
 
 
         _tfShip.position = _tfShip.position + new Vector3(-Mathf.Sin(_tfTranslationLevier.localEulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime, 0, Mathf.Sin(_tfTranslationLevier.localEulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
-        Debug.Log("Rot : " + Mathf.Sin(_tfRotLevier.localEulerAngles.x * Mathf.PI / 180) + " ; " + Mathf.Sin(_tfRotLevier.localEulerAngles.z * Mathf.PI / 180));
+        Debug.Log("Rot : " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
+        Debug.Log("AAAAAAAAAA : " + rot.x + " ; " + rot.z);
+
     }
 }

@@ -10,7 +10,7 @@ public class instanciateur : MonoBehaviour
     int _nbRock;
     Quaternion _rotationVide;
     Vector3 _spawnPosition;
-    float _spawnCooldown = 0.5f;
+    float _spawnCooldown = 1f;
     float _spawnTimer = 0;
     int _choixRock;
     // Start is called before the first frame update

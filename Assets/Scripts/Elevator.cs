@@ -35,7 +35,7 @@ public class Elevator : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Player on elevator");
+                
                 _playerOnElevator = true;
             }
         }

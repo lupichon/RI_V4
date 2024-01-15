@@ -13,6 +13,7 @@ public class Vente : MonoBehaviour
     void Start()
     {
         sellScrollbar.onValueChanged.AddListener(UpdateSellQuantity);
+        sellQuantityText.text = "Quantité de vente : 0 ";
 
     }
 

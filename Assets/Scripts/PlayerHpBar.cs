@@ -19,7 +19,7 @@ public class PlayerHpBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_playerHealth);
+        //Debug.Log(_playerHealth);
         _playerHpBar.size = _playerHealth / _playerMaxHp;
     }
     private void _healthUpdate(int _damage)

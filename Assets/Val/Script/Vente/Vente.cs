@@ -23,7 +23,7 @@ public class Vente : MonoBehaviour
     }
     void UpdateSellQuantity(float value)
     {
-        sellQuantity = Mathf.RoundToInt(value * minage._score); // maxSellQuantity est la quantité maximale que le joueur peut vendre
+        sellQuantity = Mathf.RoundToInt(value *minage._score); // maxSellQuantity est la quantité maximale que le joueur peut vendre
         sellQuantityText.text = "Quantité de vente : " + sellQuantity;
 
         

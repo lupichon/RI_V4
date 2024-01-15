@@ -12,6 +12,7 @@ public class MinageLVL : MonoBehaviour
     void Start()
     {
         _currentLVL = carac._niveauMinage;
+        _compteur = 0;
 
     }
 

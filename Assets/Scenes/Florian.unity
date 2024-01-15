@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 429651228}
   - component: {fileID: 429651227}
   - component: {fileID: 429651231}
+  - component: {fileID: 429651232}
   m_Layer: 0
   m_Name: RotationLever
   m_TagString: Untagged
@@ -885,6 +886,19 @@ MonoBehaviour:
   m_OnValueChangeY:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &429651232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429651225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35c4c079a2a04244a1d7f85761c9223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cont: 0
 --- !u!1 &456908419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfec062ebaafd6449801a62c510dc210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contact: 0
 --- !u!1 &963318818
 GameObject:
   m_ObjectHideFlags: 0

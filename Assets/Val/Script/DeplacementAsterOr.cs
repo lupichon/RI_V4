@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class DeplacementAsterOr : MonoBehaviour
 {
-    public Transform _trigger;
+   // public Transform _trigger;
     private Transform _AsterOr;
+    private Transform _cible;
     private int _speed;
     private Vector3 _distance;
     // Start is called before the first frame update
@@ -14,7 +15,7 @@ public class DeplacementAsterOr : MonoBehaviour
     {
         _speed = 5;
         _AsterOr=GetComponent<Transform>();
-
+        _cible = GameObject.Find("cible").GetComponent<Transform>();
         
     }
 
@@ -22,9 +23,9 @@ public class DeplacementAsterOr : MonoBehaviour
     void Update()
 
     {
-        
-        
-       _AsterOr.Translate(-Vector3.back*Time.deltaTime*_speed);
+
+
+        _AsterOr.position = Vector3.MoveTowards(_AsterOr.position, _cible.position, _speed * Time.deltaTime);
 
         
     }

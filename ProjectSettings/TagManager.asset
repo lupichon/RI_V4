@@ -19,6 +19,9 @@ TagManager:
   - PlayerShip
   - RotationLever
   - TranslationLever
+  - iron
+  - charcoal
+  - gold
   layers:
   - Default
   - TransparentFX

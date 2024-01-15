@@ -20,7 +20,7 @@ public class Arme : MonoBehaviour
 
     private GameObject test;
 
-    public Minage Minage;
+    //public Minage Minage;
     
 
     // Start is called before the first frame update

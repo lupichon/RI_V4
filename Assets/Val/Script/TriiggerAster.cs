@@ -28,6 +28,7 @@ public class TriiggerAster : MonoBehaviour
                 {
                     Minage._score += 1 * _lvl;
                     Destroy(other.gameObject);
+                    Debug.Log("Destruction aster or");
                 }
             }
         }

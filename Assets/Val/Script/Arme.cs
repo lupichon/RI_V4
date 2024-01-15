@@ -29,7 +29,7 @@ public class Arme : MonoBehaviour
         
         
         raycastDirection = -transform.up;
-        maxRaycastDistance = 10f;
+        maxRaycastDistance = 50f;
         _tempsRecolte = 2f;
        
         //Minage._score = 10;
@@ -67,9 +67,9 @@ public class Arme : MonoBehaviour
 
         if (Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastDistance))
         {
-            if (hit.collider.CompareTag("Or"))
+            if (hit.collider.CompareTag("gold"))
             {
-                Debug.Log("Or");
+                Debug.Log("gold");
                 if (hit.distance < maxRaycastDistance)
                 {
                     timer += Time.deltaTime;

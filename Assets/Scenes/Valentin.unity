@@ -1338,6 +1338,11 @@ PrefabInstance:
       objectReference: {fileID: 1171779068}
     - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
         type: 3}
+      propertyPath: _cible
+      value: 
+      objectReference: {fileID: 531860478}
+    - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
+        type: 3}
       propertyPath: _parentAsterOr
       value: 
       objectReference: {fileID: 1171779067}
@@ -2279,11 +2284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: fd3885c20bd662d4d903e997a4fed989, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!114 &456908424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,54 +2296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 456908420}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &464631718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3010,12 @@ MonoBehaviour:
     m_Reference: {fileID: -1636515391019944688, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &531860478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609839296263784921, guid: 15c1ce46445cb9348bbdeba5addf7159,
+    type: 3}
+  m_PrefabInstance: {fileID: 6012261107318996644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &536517786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2589882656752005312, guid: feacb2f7aa6b4a444adb413db4cfa56d,
@@ -16930,10 +16888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d3a57781247b442a90cef725fdeffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droite: {fileID: 1980322204}
-  gauche: {fileID: 314106182}
-  _xDroite: {x: -2, y: 0, z: 0}
-  _xGauche: {x: 2, y: 0, z: 0}
 --- !u!114 &1857643238
 MonoBehaviour:
   m_ObjectHideFlags: 0

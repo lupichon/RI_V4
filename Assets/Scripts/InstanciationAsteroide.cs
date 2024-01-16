@@ -34,7 +34,7 @@ public class InstanciationAsteroide : MonoBehaviour
     void Instanciation(GameObject Ast)
     {
         genereAlea();
-        GameObject asteroid = Instantiate(Ast, Pos, Quaternion.identity) ;
+        GameObject asteroid =Instantiate(Ast, Pos, Quaternion.identity) ;
         GameObject Child = asteroid.transform.GetChild(0).gameObject;
 
         float randomFloat = Random.value;
@@ -43,7 +43,12 @@ public class InstanciationAsteroide : MonoBehaviour
             Child.transform.GetChild(0).GetComponent<MeshRenderer>().material = gold;
             Child.transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
             Child.transform.GetChild(2).GetComponent<MeshRenderer>().material = gold;
-            asteroid.tag = "gold";
+
+            Child.transform.GetChild(0).tag = "gold";
+            Child.transform.GetChild(1).tag = "gold";
+            Child.transform.GetChild(2).tag = "gold";
+
+
         }
         else
         {
@@ -52,14 +57,18 @@ public class InstanciationAsteroide : MonoBehaviour
                 Child.transform.GetChild(0).GetComponent<MeshRenderer>().material = iron;
                 Child.transform.GetChild(1).GetComponent<MeshRenderer>().material = iron;
                 Child.transform.GetChild(2).GetComponent<MeshRenderer>().material = iron; ;
-                asteroid.tag = "iron";
+                Child.transform.GetChild(0).tag = "iron";
+                Child.transform.GetChild(1).tag = "iron";
+                Child.transform.GetChild(2).tag = "iron";
             }
             else if(randomFloat >= 0.2 && randomFloat < 0.4)
             {
                 Child.transform.GetChild(0).GetComponent<MeshRenderer>().material = charcoal;
                 Child.transform.GetChild(1).GetComponent<MeshRenderer>().material = charcoal;
                 Child.transform.GetChild(2).GetComponent<MeshRenderer>().material = charcoal;
-                asteroid.tag = "charcoal";
+                Child.transform.GetChild(0).tag = "charcoal"; 
+                Child.transform.GetChild(1).tag = "charcoal"; 
+                Child.transform.GetChild(2).tag = "charcoal";
             }
         }
     }
@@ -78,7 +87,7 @@ public class InstanciationAsteroide : MonoBehaviour
                 Pos[0] = Pos[0] + rayon * Mathf.Cos(angle);
                 Pos[2] = Pos[2] + rayon * Mathf.Sin(angle);
 
-                for (int k = 0; k < 5; k++)
+                for (int k = 0; k < 1; k++)
                 {
                     Instanciation(Asteroide1);
                     Instanciation(Asteroide2);

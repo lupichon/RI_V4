@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 423466}
   - component: {fileID: 3396308}
   - component: {fileID: 2330530}
+  - component: {fileID: 580702853756144742}
   m_Layer: 0
   m_Name: test_asteroid2_LOD0
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &580702853756144742
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113304}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4377398
+  m_Height: 2.6509073
+  m_Direction: 1
+  m_Center: {x: 0.18410891, y: -0.106006406, z: -0.046618108}
 --- !u!1 &141316
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +269,7 @@ GameObject:
   - component: {fileID: 431242}
   - component: {fileID: 3326240}
   - component: {fileID: 2336382}
+  - component: {fileID: 4063545605296547558}
   m_Layer: 0
   m_Name: test_asteroid2_LOD1
   m_TagString: Untagged
@@ -317,6 +342,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4063545605296547558
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4302337
+  m_Height: 2.634025
+  m_Direction: 1
+  m_Center: {x: 0.18653494, y: -0.109258376, z: -0.051454194}
 --- !u!1 &175136
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +376,7 @@ GameObject:
   - component: {fileID: 499402}
   - component: {fileID: 3333138}
   - component: {fileID: 2329180}
+  - component: {fileID: 2026423599098518312}
   m_Layer: 0
   m_Name: test_asteroid2_LOD2
   m_TagString: Untagged
@@ -400,6 +449,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2026423599098518312
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4207431
+  m_Height: 2.7045627
+  m_Direction: 1
+  m_Center: {x: 0.23343737, y: -0.12767026, z: -0.052631505}
 --- !u!1 &185484
 GameObject:
   m_ObjectHideFlags: 0

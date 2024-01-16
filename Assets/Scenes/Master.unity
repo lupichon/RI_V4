@@ -7979,9 +7979,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
         type: 3}
+      propertyPath: Carac
+      value: 
+      objectReference: {fileID: 1857643239}
+    - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
+        type: 3}
       propertyPath: Minage
       value: 
       objectReference: {fileID: 1171779068}
+    - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
+        type: 3}
+      propertyPath: _cible
+      value: 
+      objectReference: {fileID: 1047715627}
     - target: {fileID: -5575383046394003834, guid: a70c7c63bb1862e4b9fe75ff0ad2e9ba,
         type: 3}
       propertyPath: _parentAsterOr
@@ -10634,8 +10644,6 @@ GameObject:
   - component: {fileID: 456908420}
   - component: {fileID: 456908422}
   - component: {fileID: 456908421}
-  - component: {fileID: 456908424}
-  - component: {fileID: 456908423}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -10760,30 +10768,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &456908423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456908419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &456908424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456908419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &457800675
 GameObject:
   m_ObjectHideFlags: 0
@@ -14748,8 +14732,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 205625477}
-        m_TargetAssemblyTypeName: CommerceLVL, Assembly-CSharp
+      - m_Target: {fileID: 210907173}
+        m_TargetAssemblyTypeName: MinageLVL, Assembly-CSharp
         m_MethodName: CompteurPlus
         m_Mode: 1
         m_Arguments:
@@ -17407,7 +17391,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859969441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10.01}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -17416,7 +17400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -38.4}
+  m_AnchoredPosition: {x: -0, y: -38.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859969443
@@ -17463,13 +17447,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 859969446}
+        m_TargetAssemblyTypeName: BuyButton1, Assembly-CSharp
+        m_MethodName: BuyButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24474,6 +24458,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saturne (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4524543719209990472, guid: 14e53746121995543ae122630e413e51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9201306240072981721, guid: 14e53746121995543ae122630e413e51,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -26762,6 +26751,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3f6e169466f65a4aa48e83805d9e440, type: 3}
+--- !u!1 &1047715627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4609839296263784921, guid: 15c1ce46445cb9348bbdeba5addf7159,
+    type: 3}
+  m_PrefabInstance: {fileID: 6012261107318996644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1049246377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 411868, guid: 26f7afb3718727245a184c5904ea5cfa,
@@ -33343,6 +33338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saturne (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4524543719209990472, guid: 14e53746121995543ae122630e413e51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9201306240072981721, guid: 14e53746121995543ae122630e413e51,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -35849,11 +35849,11 @@ GameObject:
   - component: {fileID: 1616267737}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Or
+  m_TagString: gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &1616267733
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38294,6 +38294,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef77650fcc7dfd64a8d614922d90c382, type: 3}
+--- !u!1 &1783978635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783978636}
+  m_Layer: 0
+  m_Name: Asteroides
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783978636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783978635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.079466, y: 12.52675, z: -20.02753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789251123
 GameObject:
   m_ObjectHideFlags: 0
@@ -39724,7 +39755,6 @@ GameObject:
   - component: {fileID: 1857643234}
   - component: {fileID: 1857643233}
   - component: {fileID: 1857643232}
-  - component: {fileID: 1857643237}
   - component: {fileID: 1857643238}
   - component: {fileID: 1857643239}
   m_Layer: 6
@@ -39977,18 +40007,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
---- !u!114 &1857643237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857643226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d3a57781247b442a90cef725fdeffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1857643238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41834,8 +41852,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 205625477}
-        m_TargetAssemblyTypeName: CommerceLVL, Assembly-CSharp
+      - m_Target: {fileID: 210907173}
+        m_TargetAssemblyTypeName: MinageLVL, Assembly-CSharp
         m_MethodName: CompteurMoins
         m_Mode: 1
         m_Arguments:
@@ -48302,3 +48320,4 @@ SceneRoots:
   - {fileID: 1317848400}
   - {fileID: 409184910}
   - {fileID: 42646346}
+  - {fileID: 1783978636}

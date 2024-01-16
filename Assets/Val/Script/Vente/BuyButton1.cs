@@ -21,7 +21,7 @@ public class BuyButton1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(SellButtonClicked);
+       GetComponent<Button>().onClick.AddListener(SellButtonClicked);
 
 
     }
@@ -36,8 +36,9 @@ public class BuyButton1 : MonoBehaviour
 
 
     }
-    void SellButtonClicked()
+    public void SellButtonClicked()
     {
+
         if (carac._monnaie >= 0 )//"prix d'achat")
         {
             carac._monnaie -= _prixAchat;

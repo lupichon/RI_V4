@@ -36,10 +36,10 @@ public class BuyButton1 : MonoBehaviour
 
 
     }
-    public void SellButtonClicked()
+    void SellButtonClicked()
     {
 
-        if (carac._monnaie >= 0 )//"prix d'achat")
+        if (carac._monnaie >= _prixAchat )//"prix d'achat")
         {
             carac._monnaie -= _prixAchat;
             carac._niveauCommerce += comLVL._compteur; 

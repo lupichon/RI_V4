@@ -18,6 +18,8 @@ public class Arme : MonoBehaviour
     public GameObject _prefabAsterOr;
     public GameObject _cible;
 
+    public Caractéristiques Carac;
+
     private GameObject test;
 
     //public Minage Minage;
@@ -56,7 +58,7 @@ public class Arme : MonoBehaviour
         if (Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastDistance))
         {
             // Si le raycast frappe quelque chose, imprimer le tag de l'objet touch� dans la console
-            Debug.Log("Objet touch� : " + hit.transform.tag);
+            //Debug.Log("Objet touch� : " + hit.transform.tag);
         }
 
         // Dessiner une ligne rouge repr�sentant le raycast dans l'�diteur Unity
@@ -69,7 +71,6 @@ public class Arme : MonoBehaviour
         {
             if (hit.collider.CompareTag("gold"))
             {
-                Debug.Log("gold");
                 if (hit.distance < maxRaycastDistance)
                 {
                     timer += Time.deltaTime;
@@ -79,7 +80,13 @@ public class Arme : MonoBehaviour
                         if (_timerRecolte > _tempsRecolte)
                         {
                             _timerRecolte = 0;
+                            for (global::System.Int32 i = 0; i < Carac._niveauMinage; i++)
+                            {
+                            
                             Instantiate(_prefabAsterOr, hit.transform.position, Quaternion.identity,_parentAsterOr);
+                                
+                            }
+
                         }
                     }
                 }

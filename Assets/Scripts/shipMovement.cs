@@ -56,11 +56,11 @@ public class followLevier : MonoBehaviour
         }
 
         Vector3 rotationRoll = Vector3.forward;
-        if (totalRotationRoll < 0.75 || Mathf.Sin((_tfRotLevier.eulerAngles.x - _tfShip.eulerAngles.x) * Mathf.PI / 180) < 0)
+        if (totalRotationRoll < 0.75 || Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) < 0)
         {
-            totalRotationRoll += Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin((_tfRotLevier.eulerAngles.x - _tfShip.eulerAngles.z) * Mathf.PI / 180) * Time.deltaTime + 1f));
+            totalRotationRoll += Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) * Time.deltaTime + 1f));
         }
-        else if (totalRotationRoll > -0.75 || Mathf.Sin((_tfRotLevier.eulerAngles.x - _tfShip.eulerAngles.z) * Mathf.PI / 180) > 0)
+        else if (totalRotationRoll > -0.75 || Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) > 0)
         {
             totalRotationRoll -= Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) * Time.deltaTime + 1f));
         }
@@ -78,7 +78,7 @@ public class followLevier : MonoBehaviour
         */
 
         _tfShip.position = _tfShip.position + new Vector3(-Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime, 0, Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
-       // Debug.Log("Rot : " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
+         Debug.Log("Rot : " + Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
         //Debug.Log("AAAAAAAAAA : " + rot.x + " ; " + rot.z);
     }
 

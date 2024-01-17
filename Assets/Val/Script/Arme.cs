@@ -49,9 +49,8 @@ public class Arme : MonoBehaviour
 
     void Ray()
     {
+        raycastDirection = -transform.up;
         // D�finir la direction du raycast vers l'avant (en utilisant la direction du transform.forward)
-        Vector3 raycastDirection = -transform.up;
-
 
 
         // Effectuer le raycast
@@ -66,7 +65,6 @@ public class Arme : MonoBehaviour
     }
     void updateScore()
     {
-
         if (Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastDistance))
         {
             if (hit.collider.CompareTag("gold"))

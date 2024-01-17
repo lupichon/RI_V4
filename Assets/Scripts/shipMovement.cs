@@ -56,6 +56,7 @@ public class followLevier : MonoBehaviour
         }
 
         Vector3 rotationRoll = Vector3.forward;
+
         if (totalRotationRoll < 0.75 || Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) < 0)
         {
             totalRotationRoll += Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) * Time.deltaTime + 1f));
@@ -65,12 +66,16 @@ public class followLevier : MonoBehaviour
             totalRotationRoll -= Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) * Time.deltaTime + 1f));
         }
 
-
+        if (!(Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) == 0))
+        {
+            _tfShip.RotateAround(_tfShip.position, rotationRoll, totalRotationRoll);
+        }
+        Debug.Log("RotationRoll : " +  totalRotationRoll);
         _tfShip.RotateAround(_tfShip.position, rotationUp, totalRotationUp);
-        _tfShip.RotateAround(_tfShip.position, rotationRoll, totalRotationRoll);
 
 
-        _tfShip.position = _tfShip.position + new Vector3(-Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime, 0, Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
+        _tfShip.Translate(Vector3.right * -Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
+        _tfShip.Translate(Vector3.forward * Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
        // Debug.Log("Rot : " + Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
     }
 

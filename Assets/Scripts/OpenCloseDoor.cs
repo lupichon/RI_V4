@@ -10,7 +10,7 @@ public class OpenCloseDoor : MonoBehaviour
         {
             // Set the "character_nearby" parameter to true when the player enters
             doorAnimator.SetBool("character_nearby", true);
-            Debug.Log("Player entered the collider. character_nearby set to true.");
+            //Debug.Log("Player entered the collider. character_nearby set to true.");
         }
     }
 

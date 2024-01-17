@@ -21,7 +21,7 @@ public class followLevier : MonoBehaviour
     private Rigidbody _rbShip;
 
     private float rotationSpeed = 0.1f;
-    private float movementSpeed = 1.0f;
+    public float movementSpeed = 1.0f;
     private float totalRotationUp;
     private float totalRotationRoll;
     Vector3 rot = Vector3.zero;

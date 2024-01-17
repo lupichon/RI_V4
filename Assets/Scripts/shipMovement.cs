@@ -69,17 +69,9 @@ public class followLevier : MonoBehaviour
         _tfShip.RotateAround(_tfShip.position, rotationUp, totalRotationUp);
         _tfShip.RotateAround(_tfShip.position, rotationRoll, totalRotationRoll);
 
-       // Debug.Log("AAAAAAAAAA : " + totalRotation);
-        /*
-        rot.x += rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime;
-        rot.z += rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime;
-        
-        _tfShip.Rotate(rot.x, rot.y, rot.z, Space.Self);
-        */
 
         _tfShip.position = _tfShip.position + new Vector3(-Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime, 0, Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
-         Debug.Log("Rot : " + Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
-        //Debug.Log("AAAAAAAAAA : " + rot.x + " ; " + rot.z);
+       // Debug.Log("Rot : " + Mathf.Sin(_tfRotLevier.eulerAngles.x) * Time.deltaTime + " ; " + rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.z) * Time.deltaTime);
     }
 
 }

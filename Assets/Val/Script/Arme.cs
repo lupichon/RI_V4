@@ -63,33 +63,36 @@ public class Arme : MonoBehaviour
         // Dessiner une ligne rouge repr�sentant le raycast dans l'�diteur Unity
         Debug.DrawRay(transform.position, raycastDirection * maxRaycastDistance, Color.red);
     }
+
     void updateScore()
     {
-        if (Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastDistance))
+        if (!Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastDistance))
         {
-            if (hit.collider.CompareTag("gold"))
-            {
-                if (hit.distance < maxRaycastDistance)
-                {
-                    timer += Time.deltaTime;
-                    if (timer > _tempsMin)
-                    {
-                        _timerRecolte += Time.deltaTime;
-                        if (_timerRecolte > _tempsRecolte)
-                        {
-                            _timerRecolte = 0;
-                            for (global::System.Int32 i = 0; i < Carac._niveauMinage; i++)
-                            {
-                            
-                            Instantiate(_prefabAsterOr, hit.transform.position, Quaternion.identity,_parentAsterOr);
-                                
-                            }
+            return;
+        }
 
+
+        if (hit.collider.CompareTag("gold"))
+        {
+            if (hit.distance < maxRaycastDistance)
+            {
+                timer += Time.deltaTime;
+                if (timer > _tempsMin)
+                {
+                    _timerRecolte += Time.deltaTime;
+                    if (_timerRecolte > _tempsRecolte)
+                    {
+                        _timerRecolte = 0;
+                        for (global::System.Int32 i = 0; i < Carac._niveauMinage; i++)
+                        {
+                            
+                        Instantiate(_prefabAsterOr, hit.transform.position, Quaternion.identity,_parentAsterOr);
+                                
                         }
+
                     }
                 }
             }
         }
     }
-    
 }

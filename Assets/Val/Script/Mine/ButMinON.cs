@@ -7,6 +7,7 @@ public class ButMinON : MonoBehaviour
 {
     public GameObject xr_ori;
     public GameObject siege;
+    private GameObject Ship;
     private GameObject canon;
     public GameObject mainDroite;
     public GameObject canonspawn;
@@ -20,6 +21,7 @@ public class ButMinON : MonoBehaviour
     GetComponent<Button>().onClick.AddListener(ButtonClicked);
     canon = GameObject.Find("Canon");
         MinageON = false;
+        Ship = GameObject.Find("Vaisseau Spatial");
         
     }
 
@@ -42,12 +44,15 @@ public class ButMinON : MonoBehaviour
             xr_ori.transform.position=siege.transform.position;
             xr_ori.transform.rotation=siege.transform.rotation;
             canon.transform.parent = mainDroite.transform;
+            Ship.GetComponent<followLevier>().enabled = true;
+
         }
         else
         {
             canon.transform.parent = canonspawn.transform;
             canon.transform.position=canonspawn.transform.position;
             canon.transform.rotation=canonspawn.transform.rotation;
+            Ship.GetComponent<followLevier>().enabled = false;
         }
 
     }

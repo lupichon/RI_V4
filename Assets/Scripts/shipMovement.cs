@@ -9,7 +9,6 @@ using UnityEngine.UIElements;
 public class followLevier : MonoBehaviour
 {
     private GameObject RotLevier;
-    private GameObject RotParent;
     private Transform _tfRotLevier;
 
     public bool contact;
@@ -29,7 +28,6 @@ public class followLevier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RotParent = GameObject.Find("RotationLever");
         RotLevier = GameObject.FindWithTag("RotationLever");
         _tfRotLevier = RotLevier.GetComponent<Transform>();
         TranslationLevier = GameObject.FindWithTag("TranslationLever");
@@ -54,6 +52,13 @@ public class followLevier : MonoBehaviour
         {
             totalRotationUp -= Mathf.Log(Mathf.Abs(rotationSpeed * Mathf.Sin(_tfRotLevier.eulerAngles.x - _tfShip.eulerAngles.x * Mathf.PI / 180) * Time.deltaTime + 1f));
         }
+        if(Mathf.Sin(_tfRotLevier.eulerAngles.x - _tfShip.eulerAngles.x * Mathf.PI / 180) == 0 && Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) == 0)
+        {
+            _rbShip.angularVelocity = Vector3.zero;
+            RotLevier.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            TranslationLevier.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+        }
 
         Vector3 rotationRoll = Vector3.forward;
 
@@ -72,6 +77,13 @@ public class followLevier : MonoBehaviour
         }
         Debug.Log("RotationRoll : " +  totalRotationRoll);
         _tfShip.RotateAround(_tfShip.position, rotationUp, totalRotationUp);
+
+        if (Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) == 0)
+        {
+            _rbShip.velocity = Vector3.zero;
+            RotLevier.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            TranslationLevier.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
 
 
         _tfShip.Translate(Vector3.right * -Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime);

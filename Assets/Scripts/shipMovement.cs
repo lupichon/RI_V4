@@ -75,7 +75,7 @@ public class followLevier : MonoBehaviour
         {
             _tfShip.RotateAround(_tfShip.position, rotationRoll, totalRotationRoll);
         }
-        Debug.Log("RotationRoll : " +  totalRotationRoll);
+        //Debug.Log("RotationRoll : " +  totalRotationRoll);
         _tfShip.RotateAround(_tfShip.position, rotationUp, totalRotationUp);
 
         if (Mathf.Sin((_tfRotLevier.eulerAngles.z - _tfShip.eulerAngles.z) * Mathf.PI / 180) == 0)

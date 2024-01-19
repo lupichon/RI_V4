@@ -58,7 +58,6 @@ public class followLevier : MonoBehaviour
             RotLevier.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             TranslationLevier.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-
         }
 
         Vector3 rotationRoll = Vector3.forward;

@@ -23,6 +23,7 @@ TagManager:
   - charcoal
   - gold
   - Torpille
+  - Ship
   layers:
   - Default
   - TransparentFX

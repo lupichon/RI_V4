@@ -121,24 +121,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Button X",
-                    "type": "Button",
-                    "id": "8f73705e-634f-4b7e-b398-662fdbbde27c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Button A",
-                    "type": "Button",
-                    "id": "9d40c549-b6aa-431b-ae6e-6e101a81a1f3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -425,28 +407,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Secondary Touch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d01681e3-b993-4972-b4bc-a4b9b3d24eea",
-                    "path": "<QuestProTouchController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Button X",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ea0d36f-faeb-44d6-8076-84f1c13dd773",
-                    "path": "<ValveIndexController>{RightHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Button A",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

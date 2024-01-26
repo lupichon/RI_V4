@@ -12928,7 +12928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SELL
+  m_text: 'BUY
 
 '
   m_isRightToLeft: 0

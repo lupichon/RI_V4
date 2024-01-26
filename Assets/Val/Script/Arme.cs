@@ -86,8 +86,8 @@ public class Arme : MonoBehaviour
                         for (global::System.Int32 i = 0; i < Carac._niveauMinage; i++)
                         {
                             
-                        Instantiate(_prefabAsterOr, hit.transform.position, Quaternion.identity,_parentAsterOr);
-                                
+                            GameObject x= Instantiate(_prefabAsterOr, hit.transform.position, Quaternion.identity,_parentAsterOr);
+                            x.layer = 2;       
                         }
 
                     }

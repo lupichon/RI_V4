@@ -34,7 +34,7 @@ public class _bossThrownRock : MonoBehaviour
         }
         if(_tfRock.position.z< _shipPosition.y)
         {
-            Debug.Log("Destroy");
+            //Debug.Log("Destroy");
             HealthUpdate(_damage);
             Destroy(_tfRock.gameObject);
         }

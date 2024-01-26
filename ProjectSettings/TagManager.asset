@@ -24,6 +24,7 @@ TagManager:
   - gold
   - Torpille
   - Ship
+  - creepMob
   layers:
   - Default
   - TransparentFX

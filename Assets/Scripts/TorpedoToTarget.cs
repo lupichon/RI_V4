@@ -8,11 +8,16 @@ public class TorpedoToTarget : MonoBehaviour
     private Transform torpedo;
     private Transform target;
     public float speed;
-    private bool shoot;
+    private bool shoot = false;
+
+    public void isShooting()
+    {
+        shoot = true;
+    }
     void Start()
     {
         target = GameObject.Find("Saturne").transform;
-        shoot = false;
+        //shoot = false;
 
     }
 
@@ -24,13 +29,19 @@ public class TorpedoToTarget : MonoBehaviour
             torpedo = GameObject.Find("Chargeur").transform.GetChild(1);
             torpedo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             torpedo.position = new Vector3(0, 0, 0);
-            shoot = true;
+            //shoot = true;
         }
 
         if (shoot == true)
         {
             torpedo.position = Vector3.MoveTowards(torpedo.position, target.position, speed * Time.deltaTime);
             torpedo.LookAt(target);
+            if (Mathf.Abs(torpedo.position.magnitude - target.position.magnitude) < 0.1)
+            {
+                shoot = false;
+            }
         }
+
+
     }
 }

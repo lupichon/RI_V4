@@ -17,10 +17,9 @@ public class LeftRayCastShooter : MonoBehaviour
     public static float _shootCooldown = 1.5f;
     public static float _shootTimer = 0;
     int _weaponType = 0;
-    int _weaponTypeNumber = 2;
     float _weaponChangeTimer = 0;
     float _weaponChangeCooldown = 1f;
-    int _nbWeaponType = 2;
+    int _nbWeaponType = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +62,14 @@ public class LeftRayCastShooter : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                     }
+                    else
+                    {
+                        if (_tfHit.tag == "creepMob" && _weaponType == 2)
+                        {
+                            Debug.Log("hit");
+                            Destroy(hit.collider.gameObject);
+                        }
+                    }
 
                 }
                 _shootTimer = 0;
@@ -99,6 +106,10 @@ public class LeftRayCastShooter : MonoBehaviour
                 _aim.startColor = Color.green;
                 _aim.endColor = Color.green;
                 break;
+            case 2:
+                _aim.startColor = Color.blue;
+                _aim.endColor = Color.blue;
+                break;
             default:
                 break;
         }
@@ -107,9 +118,8 @@ public class LeftRayCastShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _weaponType %=_weaponTypeNumber; // always have a weapon type active
         _shootAttempt();
         _weaponTypeChange();
         _weaponAimDraw();
     }
-}
+    }

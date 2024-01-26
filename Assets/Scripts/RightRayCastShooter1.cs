@@ -17,10 +17,10 @@ public class RightRayCastShooter : MonoBehaviour
     public static float _shootCooldown = 1.5f;
     public static float _shootTimer = 0;
     int _weaponType = 1;
-    int _weaponTypeNumber = 2;
+
     float _weaponChangeTimer = 0;
     float _weaponChangeCooldown = 1f;
-    int _nbWeaponType = 2;
+    int _nbWeaponType = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class RightRayCastShooter : MonoBehaviour
         _positionDepart = _tfHand.position;
         _directionRay = _tfHand.forward;
         //Debug.DrawRay(_positionDepart, _directionRay, Color.green);
-        Debug.Log(_gripState);
+        //Debug.Log(_gripState);
         if (_gripState > 0.5)
         {
             Debug.Log("shoot");
@@ -63,6 +63,13 @@ public class RightRayCastShooter : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                     }
+                    else
+                    {
+                        if(_tfHit.tag == "creepMob" && _weaponType == 2)
+                        {
+                            Destroy(hit.collider.gameObject);
+                        }
+                    }
 
                 }
                 _shootTimer = 0;
@@ -74,12 +81,10 @@ public class RightRayCastShooter : MonoBehaviour
     void _weaponTypeChange()
     {
         float _primbuttonvalue = _primButton.action.ReadValue<float>();
-        //Debug.Log(" sdbsqdqs   " +_primbuttonvalue);
         _weaponChangeTimer += Time.deltaTime;
         if (_primbuttonvalue > 0.5f && _weaponChangeTimer > _weaponChangeCooldown)
         {
             _weaponType = (_weaponType+1)%_nbWeaponType;
-            //Debug.Log(_weaponType);
             _weaponChangeTimer=0;
         }
     }
@@ -99,6 +104,10 @@ public class RightRayCastShooter : MonoBehaviour
                 _aim.startColor = Color.green;
                 _aim.endColor = Color.green;
                 break;
+            case 2:
+                _aim.startColor = Color.blue;
+                _aim.endColor = Color.blue;
+                break;
             default:
                 break;
         }
@@ -107,7 +116,6 @@ public class RightRayCastShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _weaponType %=_weaponTypeNumber; // always have a weapon type active
         _shootAttempt();
         _weaponTypeChange();
         _weaponAimDraw();

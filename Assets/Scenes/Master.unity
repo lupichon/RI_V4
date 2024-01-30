@@ -17129,6 +17129,7 @@ MonoBehaviour:
   _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 487013284}
   _fireSpeed: 20
+  _degats: 20
 --- !u!114 &793153640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17984,6 +17985,7 @@ MonoBehaviour:
   _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1789537195}
   _fireSpeed: 20
+  _degats: 20
 --- !u!114 &851845037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32960,6 +32962,7 @@ MonoBehaviour:
   _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 933295625}
   _fireSpeed: 20
+  _degats: 20
 --- !u!114 &1356521773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39106,6 +39109,7 @@ MonoBehaviour:
   _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1375830507}
   _fireSpeed: 20
+  _degats: 20
 --- !u!114 &1704204211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45645,7 +45649,11 @@ MonoBehaviour:
   _distance: 0
   _animAlien: {fileID: 2049090203}
   _laser: {fileID: 1899606816384710838, guid: e7595c44d96314c4299267d321ab77b2, type: 3}
-  _arme: {fileID: 0}
+  _arme1: {fileID: 1356521772}
+  _arme2: {fileID: 851845036}
+  _arme3: {fileID: 793153639}
+  _arme4: {fileID: 1704204210}
+  _arme5: {fileID: 2083560300}
 --- !u!65 &2049090206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50892,6 +50900,7 @@ MonoBehaviour:
   _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1061984073}
   _fireSpeed: 20
+  _degats: 20
 --- !u!114 &2083560301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16855,7 +16855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fd39a1712983c419cae969174ff6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1512579446806394232, guid: 18c819f0e9ffa624fa7579fc6198da0d, type: 3}
+  _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 487013284}
   _fireSpeed: 20
 --- !u!114 &793153640
@@ -17710,7 +17710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fd39a1712983c419cae969174ff6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1512579446806394232, guid: 18c819f0e9ffa624fa7579fc6198da0d, type: 3}
+  _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1789537195}
   _fireSpeed: 20
 --- !u!114 &851845037
@@ -27922,7 +27922,7 @@ GameObject:
   - component: {fileID: 1098626164}
   - component: {fileID: 1098626163}
   m_Layer: 0
-  m_Name: sawnlaser
+  m_Name: spawnlaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27971,7 +27971,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098626161}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -32549,7 +32549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fd39a1712983c419cae969174ff6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 6024872527886022678, guid: 323d2818a1bb33e459c61281b159c62f, type: 3}
+  _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 933295625}
   _fireSpeed: 20
 --- !u!114 &1356521773
@@ -38315,7 +38315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fd39a1712983c419cae969174ff6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1512579446806394232, guid: 18c819f0e9ffa624fa7579fc6198da0d, type: 3}
+  _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1375830507}
   _fireSpeed: 20
 --- !u!114 &1704204211
@@ -44583,7 +44583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distance: 0
   _animAlien: {fileID: 2049090203}
-  _laser: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
+  _laser: {fileID: 1899606816384710838, guid: e7595c44d96314c4299267d321ab77b2, type: 3}
+  _arme: {fileID: 0}
 --- !u!65 &2049090206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49827,7 +49828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fd39a1712983c419cae969174ff6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1512579446806394232, guid: 18c819f0e9ffa624fa7579fc6198da0d, type: 3}
+  _bullet: {fileID: 122648, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
   _spawnPoint: {fileID: 1061984073}
   _fireSpeed: 20
 --- !u!114 &2083560301

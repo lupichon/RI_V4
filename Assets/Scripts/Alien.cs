@@ -12,6 +12,13 @@ public class Alien : MonoBehaviour
     public float _distance;
     public Animator _animAlien;
     public GameObject _laser;
+    private float temps = 0;
+    private int PV = 100;
+    public FireBullet _arme1;
+    public FireBullet _arme2;
+    public FireBullet _arme3;
+    public FireBullet _arme4;
+    public FireBullet _arme5;
     void Start()
     {
         _Joueur = GameObject.Find("XR Origin (XR Rig)");
@@ -19,15 +26,27 @@ public class Alien : MonoBehaviour
         _translationX = new Vector3(1, 0, 0);
         _translationZ = new Vector3(0, 0, 1);
         _rotBalles = new Quaternion(90, 0, 0,0);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        float temps_avant = Time.time;
         _posJoueur = _Joueur.GetComponent<Transform>().position;
         _posAlien = GetComponent<Transform>().position;
         deplacement();
-        shot();
+        if (Time.time-temps>1)
+        {
+            shot();
+          
+        }
+        if (_animAlien.GetCurrentAnimatorStateInfo(0).IsName("Detruit"))
+        {
+           
+
+            Destroy(this.gameObject);
+        }
     }
     void deplacement()
     {
@@ -71,14 +90,37 @@ public class Alien : MonoBehaviour
     void shot()
     {
         Vector3 pos = _rifle.transform.position;
-        //pos.y = pos.y + 1.5f;
-        //pos.z = pos.z + 0.9f;
-        //pos.x = pos.x + 0.1f;
         if (_distance <= 10 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))
         {
-       
-            Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));
+            GameObject _laserInst = Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));
+            _laserInst.GetComponent<Rigidbody>().velocity = -_rifle.transform.up * 4;
+            temps = Time.time;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("munitions"))
+        {
+            if (PV - _arme1._degats>0)
+            {
+                PV = PV - _arme1._degats;
+                _animAlien.Play("get a hit (L)");
+            }
+            else
+            {
+                _animAlien.Play("dead");
+
+            }
+            Destroy(collision.gameObject);
+            
+            
+        }
+    }
+
+    IEnumerator WaitFor10Seconds()
+    {
+        yield return new WaitForSeconds(1f);;
     }
 }
 

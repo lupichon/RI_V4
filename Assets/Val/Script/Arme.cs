@@ -21,6 +21,7 @@ public class Arme : MonoBehaviour
     public Caractéristiques Carac;
 
     private GameObject test;
+   
 
     //public Minage Minage;
     

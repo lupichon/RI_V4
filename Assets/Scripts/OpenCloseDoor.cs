@@ -3,13 +3,20 @@ using UnityEngine;
 public class OpenCloseDoor : MonoBehaviour
 {
     public Animator doorAnimator;
+    public AudioClip audioPorte = null;
+    public AudioSource Porte_AudioSource;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            
             // Set the "character_nearby" parameter to true when the player enters
             doorAnimator.SetBool("character_nearby", true);
+            //la porte s'ouvre
+
+            Porte_AudioSource.PlayOneShot(audioPorte);
+
             //Debug.Log("Player entered the collider. character_nearby set to true.");
         }
     }
@@ -17,10 +24,14 @@ public class OpenCloseDoor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+
         {
+
+
             // Reset the "character_nearby" parameter to false when the player leaves
             doorAnimator.SetBool("character_nearby", false);
-            Debug.Log("Player left the collider. character_nearby set to false.");
+            Porte_AudioSource.PlayOneShot(audioPorte);
+            //Debug.Log("Player left the collider. character_nearby set to false.");
         }
     }
 

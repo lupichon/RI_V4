@@ -8,13 +8,14 @@ public class Alien : MonoBehaviour
     private Vector3 _posAlien;
     private Vector3 _translationX, _translationZ;
     private Quaternion _rotBalles;
-    private GameObject _Joueur;
+    private GameObject _Joueur,_rifle;
     public float _distance;
     public Animator _animAlien;
     public GameObject _laser;
     void Start()
     {
         _Joueur = GameObject.Find("XR Origin (XR Rig)");
+        _rifle = GameObject.Find("Box001");
         _translationX = new Vector3(1, 0, 0);
         _translationZ = new Vector3(0, 0, 1);
         _rotBalles = new Quaternion(90, 0, 0,0);
@@ -69,10 +70,14 @@ public class Alien : MonoBehaviour
 
     void shot()
     {
+        Vector3 pos = _rifle.transform.position;
+        pos.y = pos.y + 1.5f;
+        pos.z = pos.z + 0.9f;
+        pos.x = pos.x + 0.1f;
         if (_distance <= 10 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))
         {
-            GameObject rifle = GameObject.Find("Box001");
-            Instantiate(_laser, rifle.transform.position, Quaternion.identity );
+       
+            Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));
         }
     }
 }

@@ -25,6 +25,7 @@ TagManager:
   - Torpille
   - Ship
   - creepMob
+  - munitions
   layers:
   - Default
   - TransparentFX

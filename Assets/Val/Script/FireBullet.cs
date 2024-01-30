@@ -11,6 +11,7 @@ public class FireBullet : MonoBehaviour
     private Transform _Arme;
     private Quaternion _rotationBullet;
     public float _fireSpeed=20;
+    public int _degats = 20;
     // Start is called before the first frame update
     void Start()
     {

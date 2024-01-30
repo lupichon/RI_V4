@@ -25,6 +25,6 @@ public class RadarSmallTrig : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         listeOut.Remove(other.gameObject);
-        Debug.Log(other.gameObject + "sort du radar");
+        //Debug.Log(other.gameObject + "sort du radar");
     }
 }

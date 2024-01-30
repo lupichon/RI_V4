@@ -3,7 +3,7 @@ using UnityEngine;
 public class OpenCloseDoor : MonoBehaviour
 {
     public Animator doorAnimator;
-    public AudioClip audioPorte = null;
+    public AudioClip audioPorte;
     public AudioSource Porte_AudioSource;
 
     private void OnTriggerEnter(Collider other)

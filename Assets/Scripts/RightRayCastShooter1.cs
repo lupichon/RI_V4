@@ -48,7 +48,6 @@ public class RightRayCastShooter : MonoBehaviour
         //Debug.Log(_gripState);
         if (_gripState > 0.5)
         {
-            Debug.Log("shoot");
             if (Physics.Raycast(_positionDepart, _directionRay, out hit, 100) && _rayOn && _shootTimer >= _shootCooldown)
             {
                 Transform _tfHit = hit.collider.GetComponent<Transform>();
@@ -67,7 +66,8 @@ public class RightRayCastShooter : MonoBehaviour
                     {
                         if(_tfHit.tag == "creepMob" && _weaponType == 2)
                         {
-                            Destroy(hit.collider.gameObject);
+                            hit.collider.gameObject.GetComponent<Animator>().SetBool("isDead",true) ;
+                            hit.collider.gameObject.GetComponent<_creepMobBehavior>().isDead=true;
                         }
                     }
 

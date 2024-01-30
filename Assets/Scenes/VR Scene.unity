@@ -4563,6 +4563,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5243507653502562868, guid: 0f5d8cab47cc81a4da701cc38f789ca5,
         type: 3}
+      propertyPath: _prefabEnemy
+      value: 
+      objectReference: {fileID: 2509192274533634311, guid: 5f198f75a6730b040bd1161a4d964d76,
+        type: 3}
+    - target: {fileID: 5243507653502562868, guid: 0f5d8cab47cc81a4da701cc38f789ca5,
+        type: 3}
       propertyPath: _prefabIonWeakRock
       value: 
       objectReference: {fileID: 9033288005592542779, guid: 2f39285ba3940164ca7db474d44fb138,

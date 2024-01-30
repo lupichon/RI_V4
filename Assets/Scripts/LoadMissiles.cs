@@ -22,9 +22,10 @@ public class LoadMissiles : MonoBehaviour
     {
         if (other.CompareTag("Torpille"))
         {
+            Debug.Log("Dans torpille");
             other.transform.SetParent(GameObject.Find("Chargeur").GetComponent<Transform>());
             //other.GetComponent<Rigidbody>().isKinematic = true;
-            other.transform.localPosition = new Vector3(3.5f, -1.35f, 0f);
+            other.transform.localPosition = new Vector3(10f, 10f, 10f);
             other.transform.localRotation = q;
         }
     }

@@ -8,7 +8,7 @@ public class TorpedoToTarget : MonoBehaviour
     private Transform torpedo;
     private Transform target;
     public float speed;
-    private bool shoot = false;
+    private bool shoot;
 
     public void isShooting()
     {
@@ -17,23 +17,24 @@ public class TorpedoToTarget : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Saturne").transform;
-        //shoot = false;
+        shoot = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("Chargeur").transform.childCount > 1 && shoot == false)
+        if (GameObject.Find("Chargeur").transform.childCount > 0 && shoot == false)
         {
-            torpedo = GameObject.Find("Chargeur").transform.GetChild(1);
-            torpedo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            torpedo.position = new Vector3(0, 0, 0);
+            torpedo = GameObject.Find("Chargeur").transform.GetChild(0);
+            //torpedo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            //torpedo.position = new Vector3(0, 0, 0);
             //shoot = true;
         }
 
-        if (shoot == true)
+        if (GameObject.Find("Chargeur").transform.childCount > 0 && shoot == true)
         {
+            torpedo.GetComponent<Rigidbody>().useGravity = false;
             torpedo.position = Vector3.MoveTowards(torpedo.position, target.position, speed * Time.deltaTime);
             torpedo.LookAt(target);
             if (Mathf.Abs(torpedo.position.magnitude - target.position.magnitude) < 0.1)

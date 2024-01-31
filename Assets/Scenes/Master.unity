@@ -8182,6 +8182,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 465316302}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &238858926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4191942975211379026, guid: 122be195cd866c04ca4948a67fafc82f,
+    type: 3}
+  m_PrefabInstance: {fileID: 478581222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be60229d9ce8af4e8327c8215be4eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &239024254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477172, guid: a185d2c8149cc7d45a8bc91951812dc1,
@@ -38323,7 +38335,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -6075460096728982517, guid: 0be0028c24f2a4c14a96b6aa39055933,
+    m_Reference: {fileID: -3813545832519583171, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!1 &1512519669
 GameObject:
@@ -41054,7 +41066,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647467552}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 3.2495422}
+  m_LocalPosition: {x: 0, y: 0, z: 3.25}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41063,7 +41075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.16216, y: 4.171}
+  m_AnchoredPosition: {x: -37, y: 4.171}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647467555
@@ -46057,7 +46069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpPerso: 0
-  alien: {fileID: 0}
+  alien: {fileID: 238858926}
   _mainGauche: {fileID: 1030988483}
   car: {fileID: 1857643239}
   _respawn: {fileID: 1248844535}
@@ -47317,7 +47329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.162, y: 4.372}
+  m_AnchoredPosition: {x: -37, y: 4.372}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940878519
@@ -47475,7 +47487,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 2952475536639892490, guid: 0be0028c24f2a4c14a96b6aa39055933,
+    m_Reference: {fileID: -2391002164147862136, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!120 &1942664438
 LineRenderer:

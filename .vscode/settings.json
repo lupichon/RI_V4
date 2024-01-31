@@ -51,5 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RI_V4.sln"
+    "dotnet.defaultSolution": "RI_V4.sln",
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.default.compilerPath": ""
 }

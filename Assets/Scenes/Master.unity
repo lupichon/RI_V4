@@ -45724,12 +45724,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1857643226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-  m_Script: {fileID: 11500000, guid: 664554a4f5e490947a72f10c9bdc9572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _alien: {fileID: 0}
-=======
   m_Script: {fileID: 11500000, guid: 2f441a40c7605f94d925290d65d1ee52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -45739,7 +45733,6 @@ MonoBehaviour:
   car: {fileID: 1857643239}
   _respawn: {fileID: 1248844535}
   player: {fileID: 1857643226}
->>>>>>> c3193cfba883c6e6f9632415af5861dab3c105a6
 --- !u!4 &1860010459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439240, guid: 548a40efc092c6f408cc4d1691b171cc,

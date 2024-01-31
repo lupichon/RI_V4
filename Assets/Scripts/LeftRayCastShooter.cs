@@ -26,8 +26,8 @@ public class LeftRayCastShooter : MonoBehaviour
         _tfHand = GetComponent<Transform>();
         _matRock = Resources.Load<Material>("Assets/Assets/Rock/texture/Materials/Stone_specular.mat");
         _aim = GetComponent<LineRenderer>();
-        _aim.startWidth = 0.005f;
-        _aim.endWidth = 0.005f;
+        _aim.startWidth = 0.05f;
+        _aim.endWidth = 0.05f;
 
     }
 
@@ -42,7 +42,7 @@ public class LeftRayCastShooter : MonoBehaviour
 
         RaycastHit hit;
         _positionDepart = _tfHand.position;
-        _directionRay = _tfHand.forward;
+        _directionRay = -_tfHand.up;
         //Debug.DrawRay(_positionDepart, _directionRay, Color.green);
 
         if (_gripState > 0.5)
@@ -81,10 +81,12 @@ public class LeftRayCastShooter : MonoBehaviour
     void _weaponTypeChange()
     {
         float _primbuttonvalue = _primButton.action.ReadValue<float>();
+        
         //Debug.Log(" sdbsqdqs   " +_primbuttonvalue);
         _weaponChangeTimer += Time.deltaTime;
         if (_primbuttonvalue > 0.5f && _weaponChangeTimer > _weaponChangeCooldown)
         {
+            Debug.Log("X");
             _weaponType = (_weaponType+1)%_nbWeaponType;
             //Debug.Log(_weaponType);
             _weaponChangeTimer=0;

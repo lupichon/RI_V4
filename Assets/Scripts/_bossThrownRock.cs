@@ -9,8 +9,8 @@ public class _bossThrownRock : MonoBehaviour
     int _damage = 1;
     Transform _tfRock;
     Vector3 _direction;
-    float _speed = 0.75f;
-    float _lifeSpan = 10f;
+    float _speed = 2f;
+    float _lifeSpan = 30f;
     float _age = 0;
     Vector3 _shipPosition;
     
@@ -18,8 +18,8 @@ public class _bossThrownRock : MonoBehaviour
     void Start()
     {
         _tfRock = GetComponent<Transform>();
-        _direction = new Vector3(0, 0, -1);
-        _shipPosition = new Vector3(0, 0, 0);
+        _direction = new Vector3(0, 0, 1);
+        _shipPosition = new Vector3(0, 0, -12);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class _bossThrownRock : MonoBehaviour
         {
             Destroy(_tfRock.gameObject);
         }
-        if(_tfRock.position.z< _shipPosition.y)
+        if(_tfRock.position.z> _shipPosition.z)
         {
             //Debug.Log("Destroy");
             HealthUpdate(_damage);

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8896562454423892632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91304205843360742}
+  - component: {fileID: 5725128826928599697}
+  m_Layer: 0
+  m_Name: Instanciateur BossFight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &91304205843360742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896562454423892632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.051968813, y: 2.9313385, z: -0.32446194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5725128826928599697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896562454423892632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b3f98d6a593e24d8fc0d6f8f38537a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabPlasmaWeakRock: {fileID: 6762431008416541937, guid: 27ad336f04a68044bb9b33d1c35ef556,
+    type: 3}
+  _prefabIonWeakRock: {fileID: 9033288005592542779, guid: 2f39285ba3940164ca7db474d44fb138,
+    type: 3}
+  _prefabEnemy: {fileID: 2509192274533634311, guid: 5f198f75a6730b040bd1161a4d964d76,
+    type: 3}

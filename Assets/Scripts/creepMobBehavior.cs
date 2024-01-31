@@ -10,7 +10,7 @@ public class _creepMobBehavior : MonoBehaviour
     int _damageE = 1;
     Transform _tfEnemy;
     Vector3 _directionEnemy;
-    float _speedE = 0.75f, _lifeSpanE = 10f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
+    float _speedE = 2f, _lifeSpanE = 30f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
     Vector3 _shipPositionE;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class _creepMobBehavior : MonoBehaviour
     {
         _tfEnemy = GetComponent<Transform>();
         _directionEnemy = new Vector3(0, 0, -1);
-        _shipPositionE = new Vector3(0, 0, 0);
+        _shipPositionE = new Vector3(0, 0, -12);
         _ani = GetComponent<Animator>();
     }
 
@@ -35,7 +35,7 @@ public class _creepMobBehavior : MonoBehaviour
             {
                 Destroy(_tfEnemy.gameObject);
             }
-            if (_tfEnemy.position.z < _shipPositionE.y)
+            if (_tfEnemy.position.z > _shipPositionE.z)
             {
                 //Debug.Log("Destroy");
                 HealthUpdateE(_damageE);

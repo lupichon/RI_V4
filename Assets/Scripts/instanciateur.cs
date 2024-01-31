@@ -18,9 +18,9 @@ public class instanciateur : MonoBehaviour
         //Debug.Log(_prefabPlasmaWeakRock);
         _nbRock = 0;
         _rotationVide = new Quaternion(0, 0, 0, 0);
-        _spawnPositionRock = new Vector3(1f, 5, 5);
-        _spawnPositionEnemy = new Vector3(1f, 5, 5);
-        _rotationEnemy = new Quaternion(0, 180, 0, 0);
+        _spawnPositionRock = new Vector3(16, 7, -85);
+        _spawnPositionEnemy = new Vector3(16, 7, -85);
+        _rotationEnemy = new Quaternion(0, 0, 0, 0);
         
 
     }

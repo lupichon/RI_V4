@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Alien : MonoBehaviour
 {
     private Vector3 _posJoueur;
     private Vector3 _posAlien;
-    private Vector3 _translationX, _translationZ;
+    private Vector3 _translationX;
+    private float _translationZ = 1;
     private Quaternion _rotBalles;
-    private GameObject _Joueur,_rifle;
+    private GameObject _Joueur;
+    private Transform _rifle;
     public float _distance;
     public Animator _animAlien;
     public GameObject _laser;
@@ -19,14 +22,34 @@ public class Alien : MonoBehaviour
     public FireBullet _arme3;
     public FireBullet _arme4;
     public FireBullet _arme5;
+    Scrollbar _alienHpBar;
+
     void Start()
     {
         _Joueur = GameObject.Find("XR Origin (XR Rig)");
-        _rifle = GameObject.Find("spawnlaser");
+        _rifle = transform.GetChild(1).transform.GetChild(0);
+        if(_rifle == null)
+        {
+            Debug.Log("aaa");
+        }
+        else
+        {
+            Debug.Log("bbb");
+        }
+        //_rifle = childTransform.gameObject;
         _translationX = new Vector3(1, 0, 0);
-        _translationZ = new Vector3(0, 0, 1);
+        //_translationZ = new Vector3(0, 0, 1);
         _rotBalles = new Quaternion(90, 0, 0,0);
-       
+
+        FireBullet[] armesTrouvees = FindObjectsOfType<FireBullet>();
+        _arme1 = armesTrouvees[0];
+        _arme2 = armesTrouvees[1];
+        _arme3 = armesTrouvees[2];
+        _arme4 = armesTrouvees[3];
+        _arme5 = armesTrouvees[4];
+
+        _alienHpBar = GetComponent<Scrollbar>();
+
     }
 
     // Update is called once per frame
@@ -48,47 +71,30 @@ public class Alien : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     void deplacement()
     {
-        _distance = Mathf.Pow(_posAlien[0] - _posJoueur[0], 2) + Mathf.Pow(_posAlien[2] - _posJoueur[2], 2);
-        if (_distance > 10)
-        {
-            if (_posAlien[0] - _posJoueur[0] > 0.1 || _posAlien[0] - _posJoueur[0] < -0.1)
-            {
-                if (_posAlien[0] - _posJoueur[0] > 0)
-                {
-                    GetComponent<Transform>().position -= _translationX * Time.deltaTime;
-                }
-                else if (_posAlien[0] - _posJoueur[0] < 0)
-                {
-                    GetComponent<Transform>().position += _translationX * Time.deltaTime;
-                }
-            }
-            if (_posAlien[2] - _posJoueur[2] > 0.1 || _posAlien[2] - _posJoueur[2] < -0.1)
-            {
-                if (_posAlien[2] - _posJoueur[2] > 0)
-                {
-                    GetComponent<Transform>().position -= _translationZ * Time.deltaTime;
-                }
-                else if (_posAlien[2] - _posJoueur[2] < 0)
-                {
-                    GetComponent<Transform>().position += _translationZ * Time.deltaTime;
-                }
-            }
-            _animAlien.SetBool("isAtDistance", false);
-        }
-        else
-        {
-            _animAlien.SetBool("isAtDistance", true);
-        }
-        Vector3 directionVersJoueur = _posJoueur - _posAlien;
+        _distance = Vector3.Distance(_posAlien, _posJoueur);
+
+        Vector3 directionVersJoueur = (_posJoueur - _posAlien).normalized;
         directionVersJoueur.y = 0f;
+
         Quaternion rotationVersJoueur = Quaternion.LookRotation(directionVersJoueur);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotationVersJoueur, Time.deltaTime);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, Time.deltaTime);
+
+        // Déplacer l'objet vers le joueur
+        transform.Translate(Vector3.forward * _translationZ * Time.deltaTime);
+
+        // Mettre à jour l'animation en fonction de la distance
+        _animAlien.SetBool("isAtDistance", _distance <= 10);
     }
 
     void shot()
     {
+        if(_rifle ==  null)
+        {
+            Debug.Log("ccc");
+        }
         Vector3 pos = _rifle.transform.position;
         if (_distance <= 10 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))
         {
@@ -117,11 +123,17 @@ public class Alien : MonoBehaviour
             
         }
     }
-
-    IEnumerator WaitFor10Seconds()
+    
+   /*
+    void Update()
     {
-        yield return new WaitForSeconds(1f);;
+        Debug.Log(_bossHealth);
+        _bossHpBar.size = _bossHealth / _bossMaxHp;
     }
+    private void _healthUpdate(int _damage)
+    {
+        _bossHealth -= _damage;
+    }*/
 }
 
 

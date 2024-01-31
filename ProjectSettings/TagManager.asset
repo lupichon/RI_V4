@@ -26,6 +26,7 @@ TagManager:
   - Ship
   - creepMob
   - munitions
+  - munitionsennemi
   layers:
   - Default
   - TransparentFX

@@ -290,49 +290,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 2342546, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342546, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342546, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_LightProbeUsage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2372842, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_ScaleInLightmap
-      value: 1.1599306
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_Size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_LocalReferencePoint.x
-      value: -0.0000026226044
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_LocalReferencePoint.z
-      value: 0.0000076293945
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.14499117
-      objectReference: {fileID: 0}
-    - target: {fileID: 20562216, guid: 5b3cc55650f95e34797ed0af9c57110a, type: 3}
-      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.009300427
-      objectReference: {fileID: 0}
-=======
->>>>>>> 1648134e8a90dc7162c26bc2ce892609dbe1d543
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8725,7 +8682,7 @@ Transform:
   m_GameObject: {fileID: 276235522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.11, y: 1.2834373, z: 4.88}
+  m_LocalPosition: {x: 0.13, y: 1.2834373, z: 4.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

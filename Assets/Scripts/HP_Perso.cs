@@ -5,6 +5,7 @@ using UnityEngine;
 public class HP_Perso : MonoBehaviour
 {
     public int _hpPerso;
+    public Alien alien;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,22 @@ public class HP_Perso : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("munitionsennemi"))
         {
+            _hpPerso = _hpPerso - alien.degats;
+            Destroy(collision.gameObject);
+
+            
+
 
         }
+    }
+
+    void FadingHealth()
+    {
+
+    }
+    void Mort()
+    {
+
     }
 
 }

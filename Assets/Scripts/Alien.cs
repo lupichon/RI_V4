@@ -48,7 +48,8 @@ public class Alien : MonoBehaviour
         _arme4 = armesTrouvees[3];
         _arme5 = armesTrouvees[4];
 
-        _alienHpBar = GetComponent<Scrollbar>();
+        _alienHpBar = GetComponentInChildren<Scrollbar>();
+        _alienHpBar.size = 1;
 
     }
 
@@ -82,11 +83,12 @@ public class Alien : MonoBehaviour
         Quaternion rotationVersJoueur = Quaternion.LookRotation(directionVersJoueur);
         transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, Time.deltaTime);
 
-        // Déplacer l'objet vers le joueur
-        transform.Translate(Vector3.forward * _translationZ * Time.deltaTime);
+        if(_distance>7 && PV>0)
+        {
+            transform.Translate(Vector3.forward * _translationZ * Time.deltaTime);
+        }
 
-        // Mettre à jour l'animation en fonction de la distance
-        _animAlien.SetBool("isAtDistance", _distance <= 10);
+        _animAlien.SetBool("isAtDistance", _distance <= 7);
     }
 
     void shot()
@@ -111,10 +113,14 @@ public class Alien : MonoBehaviour
             if (PV - _arme1._degats>0)
             {
                 PV = PV - _arme1._degats;
+                _alienHpBar.size = PV / 100f;
+                Debug.Log(PV/100);
                 _animAlien.Play("get a hit (L)");
             }
             else
             {
+                PV = 0;
+                _alienHpBar.gameObject.SetActive(false);
                 _animAlien.Play("dead");
 
             }
@@ -123,17 +129,6 @@ public class Alien : MonoBehaviour
             
         }
     }
-    
-   /*
-    void Update()
-    {
-        Debug.Log(_bossHealth);
-        _bossHpBar.size = _bossHealth / _bossMaxHp;
-    }
-    private void _healthUpdate(int _damage)
-    {
-        _bossHealth -= _damage;
-    }*/
 }
 
 

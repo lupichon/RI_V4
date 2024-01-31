@@ -17,6 +17,7 @@ public class Alien : MonoBehaviour
     public GameObject _laser;
     private float temps = 0;
     private int PV = 100;
+    public int degats = 20;
     public FireBullet _arme1;
     public FireBullet _arme2;
     public FireBullet _arme3;

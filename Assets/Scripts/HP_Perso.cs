@@ -15,7 +15,10 @@ public class HP_Perso : MonoBehaviour
     public Material MaterialYellow;
     public Material MaterialRed;
 
-    public SkinnedMeshRenderer tamere;
+    public AudioClip HitNous;
+    public AudioSource AudioSource;
+
+    public SkinnedMeshRenderer main;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,9 @@ public class HP_Perso : MonoBehaviour
         if (collision.gameObject.CompareTag("munitionsennemi"))
         {
             _hpPerso = _hpPerso - alien.degats;
+
+           AudioSource.PlayOneShot(HitNous);
+
             Destroy(collision.gameObject);
 
             
@@ -49,28 +55,27 @@ public class HP_Perso : MonoBehaviour
         
 
         
-            // Changez le mat�riau
-            //renderer.material = newMaterial;
+            
             if (_hpPerso > 50)
             {
                 //main en vert
-                tamere.material = MaterialGreen;
-                Debug.Log("ahhhhhhhh");
+                main.material = MaterialGreen;
+               // Debug.Log("ahhhhhhhh");
             }
             if (_hpPerso < 50 && _hpPerso > 30)
             {
                 //main orange
-                Debug.Log("ahhhhhhhh1");
+                //Debug.Log("ahhhhhhhh1");
 
-                tamere.material = MaterialYellow;
+                main.material = MaterialYellow;
 
             }
             if (_hpPerso < 30)
             {
                 //main rouge
-                Debug.Log("ahhhhhhh2");
+                //Debug.Log("ahhhhhhh2");
 
-                tamere.material= MaterialRed;
+                main.material= MaterialRed;
 
 
            }

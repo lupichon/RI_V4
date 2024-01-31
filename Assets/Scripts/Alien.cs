@@ -23,6 +23,16 @@ public class Alien : MonoBehaviour
     public FireBullet _arme3;
     public FireBullet _arme4;
     public FireBullet _arme5;
+
+    public AudioClip Tir;
+    public AudioClip Hit1;
+    public AudioClip Hit2;
+    public AudioClip Mort;
+
+
+
+    public AudioSource AudioSource;
+
     Scrollbar _alienHpBar;
 
     void Start()
@@ -103,6 +113,9 @@ public class Alien : MonoBehaviour
         {
             GameObject _laserInst = Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));
             _laserInst.GetComponent<Rigidbody>().velocity = -_rifle.transform.up * 4;
+
+            AudioSource.PlayOneShot(Tir);
+
             temps = Time.time;
         }
     }
@@ -113,6 +126,8 @@ public class Alien : MonoBehaviour
         {
             if (PV - _arme1._degats>0)
             {
+                AudioSource.PlayOneShot(Hit1);
+
                 PV = PV - _arme1._degats;
                 _alienHpBar.size = PV / 100f;
                 Debug.Log(PV/100);
@@ -123,6 +138,8 @@ public class Alien : MonoBehaviour
                 PV = 0;
                 _alienHpBar.gameObject.SetActive(false);
                 _animAlien.Play("dead");
+                AudioSource.PlayOneShot(Mort);
+
 
             }
             Destroy(collision.gameObject);

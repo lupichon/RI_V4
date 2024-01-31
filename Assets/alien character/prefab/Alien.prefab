@@ -1252,6 +1252,11 @@ MonoBehaviour:
   _arme3: {fileID: 0}
   _arme4: {fileID: 0}
   _arme5: {fileID: 0}
+  Tir: {fileID: 0}
+  Hit1: {fileID: 0}
+  Hit2: {fileID: 0}
+  Mort: {fileID: 0}
+  AudioSource: {fileID: 4629904716056294983}
 --- !u!65 &3466854286659405986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1341,6 +1346,12 @@ Transform:
 --- !u!95 &2934994354501804885 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: e5836d050fdb354479bcd0d285bf2f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 2934994354492380725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4629904716056294983 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7564789668864811122, guid: e5836d050fdb354479bcd0d285bf2f22,
     type: 3}
   m_PrefabInstance: {fileID: 2934994354492380725}
   m_PrefabAsset: {fileID: 0}

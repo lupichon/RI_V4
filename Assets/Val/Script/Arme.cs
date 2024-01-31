@@ -21,10 +21,13 @@ public class Arme : MonoBehaviour
     public Caractéristiques Carac;
 
     private GameObject test;
-   
+
+    public AudioClip Audio;
+    public AudioSource AudioSource;
+
 
     //public Minage Minage;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,9 @@ public class Arme : MonoBehaviour
 
         if (hit.collider.CompareTag("gold"))
         {
+
+            AudioSource.PlayOneShot(Audio);
+
             if (hit.distance < maxRaycastDistance)
             {
                 timer += Time.deltaTime;

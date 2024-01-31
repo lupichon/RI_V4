@@ -10616,12 +10616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contact: 0
   movementSpeed: 1
---- !u!1 &410665366 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 109434732395284507, guid: 65847589f926b734d9eaed6e25f0046b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1236731570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415517124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46169,13 +46163,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857643226}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f441a40c7605f94d925290d65d1ee52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hpPerso: 0
-  alien: {fileID: 0}
+  alien: {fileID: 562363827}
   _mainGauche: {fileID: 1030988483}
   car: {fileID: 1857643239}
   _respawn: {fileID: 1248844535}

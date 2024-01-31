@@ -7,9 +7,15 @@ public class HP_Perso : MonoBehaviour
     public int _hpPerso;
     public Alien alien;
     public GameObject _mainGauche;
-    public Caractéristiques car;
+    public CaractÃ©ristiques car;
     public GameObject _respawn;
     public GameObject player;
+
+    public Material MaterialGreen;
+    public Material MaterialYellow;
+    public Material MaterialRed;
+
+    public SkinnedMeshRenderer tamere;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,24 +46,36 @@ public class HP_Perso : MonoBehaviour
 
     void HandHealth()
     {
-        if (_hpPerso > 50)
-        {
-            //main en vert
-            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color",Color.green);
-        }
-        if (50>_hpPerso&& _hpPerso>30)
-        {
-            //main orange
-            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
+        
 
-        }
-        if (_hpPerso<30)
-        {
-            //main rouge
-            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+        
+            // Changez le matï¿½riau
+            //renderer.material = newMaterial;
+            if (_hpPerso > 50)
+            {
+                //main en vert
+                tamere.material = MaterialGreen;
+                Debug.Log("ahhhhhhhh");
+            }
+            if (_hpPerso < 50 && _hpPerso > 30)
+            {
+                //main orange
+                Debug.Log("ahhhhhhhh1");
+
+                tamere.material = MaterialYellow;
+
+            }
+            if (_hpPerso < 30)
+            {
+                //main rouge
+                Debug.Log("ahhhhhhh2");
+
+                tamere.material= MaterialRed;
 
 
-        }
+           }
+      
+        
 
     }
     void Mort()
@@ -67,6 +85,7 @@ public class HP_Perso : MonoBehaviour
             car._monnaie = 0;
             player.transform.position = _respawn.transform.position;
             player.transform.rotation = _respawn.transform.rotation;
+            _hpPerso = 100;
 
 
 

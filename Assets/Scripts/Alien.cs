@@ -96,7 +96,7 @@ public class Alien : MonoBehaviour
     {
         if(_rifle ==  null)
         {
-            Debug.Log("ccc");
+            //Debug.Log("ccc");
         }
         Vector3 pos = _rifle.transform.position;
         if (_distance <= 10 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))

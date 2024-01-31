@@ -43,18 +43,18 @@ public class HP_Perso : MonoBehaviour
         if (_hpPerso > 50)
         {
             //main en vert
-            _mainGauche.GetComponent<Material>().SetColor("_Color",Color.green);
+            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color",Color.green);
         }
         if (50>_hpPerso&& _hpPerso>30)
         {
             //main orange
-            _mainGauche.GetComponent<Material>().SetColor("_Color", Color.yellow);
+            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color", Color.yellow);
 
         }
         if (_hpPerso<30)
         {
             //main rouge
-            _mainGauche.GetComponent<Material>().SetColor("_Color", Color.red);
+            _mainGauche.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
 
         }

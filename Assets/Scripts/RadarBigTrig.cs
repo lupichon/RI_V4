@@ -43,7 +43,7 @@ public class RadarBigTrig : MonoBehaviour
                 if (t2)
                 {
                     objListe.Add(obj);
-                    Debug.Log(obj + " rentre dans le radar");
+                   // Debug.Log(obj + " rentre dans le radar");
                 }
             }
         }
@@ -71,6 +71,6 @@ public class RadarBigTrig : MonoBehaviour
     {
         objListe.Remove(other.gameObject);
         listeIn.Remove(other.gameObject);
-        Debug.Log(other.gameObject + "sort du radar");
+       // Debug.Log(other.gameObject + "sort du radar");
     }
 }

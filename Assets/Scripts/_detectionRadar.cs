@@ -18,7 +18,7 @@ public class _detectionRadar : MonoBehaviour
     {
         foreach(var i in objList)
         {
-            Debug.Log(i + "est dans le radar !\n");
+          //  Debug.Log(i + "est dans le radar !\n");
         }
 
     }

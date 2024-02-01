@@ -12,6 +12,10 @@ public class FireBullet : MonoBehaviour
     private Quaternion _rotationBullet;
     public float _fireSpeed=20;
     public int _degats = 20;
+
+    public AudioClip Tir;
+    public AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,9 @@ public class FireBullet : MonoBehaviour
     public void FireBulet(ActivateEventArgs args)
     {
         GameObject spawnedBullet = Instantiate(_bullet,_spawnPoint.position,_rotationBullet);
+
+        AudioSource.PlayOneShot(Tir);
+
         spawnedBullet.transform.position=_spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = -_spawnPoint.up*_fireSpeed;
         Destroy(spawnedBullet, 5);

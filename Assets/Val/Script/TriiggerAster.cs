@@ -5,11 +5,14 @@ using UnityEngine;
 public class TriiggerAster : MonoBehaviour
 {
     public Minage Minage;
-    private int _lvl;
+
+    public AudioClip Audio;
+    public AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        _lvl = 1;
+        
 
     }
 
@@ -26,9 +29,12 @@ public class TriiggerAster : MonoBehaviour
             {
                 if (other.CompareTag("AsterOR"))
                 {
-                    Minage._score += 1 * _lvl;
+                    Minage._score += 1 ;
+
+                    AudioSource.PlayOneShot(Audio);
+
                     Destroy(other.gameObject);
-                    Debug.Log("Destruction aster or");
+                    //Debug.Log("Destruction aster or");
                 }
             }
         }

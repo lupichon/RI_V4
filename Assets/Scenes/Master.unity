@@ -12713,7 +12713,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c586dcf36a2f2cf4faa13fa1ee7044a2, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18480,8 +18479,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 487013284}
   _fireSpeed: 20
   _degats: 20
-  Tir: {fileID: 0}
-  AudioSource: {fileID: 0}
+  Tir: {fileID: 8300000, guid: 7bec1c2acae400d44803394495cdb134, type: 3}
+  AudioSource: {fileID: 1454801397}
 --- !u!114 &793153640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19338,8 +19337,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 1789537195}
   _fireSpeed: 20
   _degats: 20
-  Tir: {fileID: 0}
-  AudioSource: {fileID: 0}
+  Tir: {fileID: 8300000, guid: 7bec1c2acae400d44803394495cdb134, type: 3}
+  AudioSource: {fileID: 1454801397}
 --- !u!114 &851845037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25141,12 +25140,12 @@ MonoBehaviour:
     m_Reference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_RotateAnchorAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Rotate Anchor
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 29e61291-9823-4a53-9865-cc18d3f31ed8
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -25167,12 +25166,12 @@ MonoBehaviour:
     m_Reference: {fileID: -440298646266941818, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_TranslateAnchorAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Translate Anchor
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 329d1222-c3ed-4de7-bdbd-720653003e10
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -35478,8 +35477,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 933295625}
   _fireSpeed: 20
   _degats: 20
-  Tir: {fileID: 0}
-  AudioSource: {fileID: 0}
+  Tir: {fileID: 8300000, guid: 7bec1c2acae400d44803394495cdb134, type: 3}
+  AudioSource: {fileID: 1454801397}
 --- !u!114 &1356521773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39450,7 +39449,7 @@ MonoBehaviour:
     m_Reference: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_RotateAnchorAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Rotate Anchor
       m_Type: 0
@@ -39476,7 +39475,7 @@ MonoBehaviour:
     m_Reference: {fileID: -8811388872089202044, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_TranslateAnchorAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Translate Anchor
       m_Type: 0
@@ -42387,8 +42386,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 1375830507}
   _fireSpeed: 20
   _degats: 20
-  Tir: {fileID: 0}
-  AudioSource: {fileID: 0}
+  Tir: {fileID: 8300000, guid: 7bec1c2acae400d44803394495cdb134, type: 3}
+  AudioSource: {fileID: 1454801397}
 --- !u!114 &1704204211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54272,8 +54271,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 1061984073}
   _fireSpeed: 20
   _degats: 20
-  Tir: {fileID: 0}
-  AudioSource: {fileID: 0}
+  Tir: {fileID: 8300000, guid: 7bec1c2acae400d44803394495cdb134, type: 3}
+  AudioSource: {fileID: 1454801397}
 --- !u!114 &2083560301
 MonoBehaviour:
   m_ObjectHideFlags: 0

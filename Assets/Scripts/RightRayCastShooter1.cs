@@ -27,8 +27,8 @@ public class RightRayCastShooter : MonoBehaviour
         _tfHand = GetComponent<Transform>();
         _matRock = Resources.Load<Material>("Assets/Assets/Rock/texture/Materials/Stone_specular.mat");
         _aim = GetComponent<LineRenderer>();
-        _aim.startWidth = 0.005f;
-        _aim.endWidth = 0.005f;
+        _aim.startWidth = 0.05f;
+        _aim.endWidth = 0.05f;
 
     }
 
@@ -43,7 +43,7 @@ public class RightRayCastShooter : MonoBehaviour
 
         RaycastHit hit;
         _positionDepart = _tfHand.position;
-        _directionRay = _tfHand.forward;
+        _directionRay = -_tfHand.up;
         //Debug.DrawRay(_positionDepart, _directionRay, Color.green);
         //Debug.Log(_gripState);
         if (_gripState > 0.5)

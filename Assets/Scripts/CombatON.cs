@@ -13,19 +13,24 @@ public class CombatON : MonoBehaviour
     public GameObject mainDroite;
     public GameObject mainGauche;
     public GameObject canonspawn;
-
+    GameObject UI;
+    GameObject canon;
     public CombatOFF comboff;
-
+    [SerializeField] ButMinON _butMinON;
     public bool isCombatON;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(ButtonClicked);
+        canon = GameObject.Find("Canon");
+
         canonGauche = GameObject.Find("ArmeGauche");
         canonDroit = GameObject.Find("ArmeDroit");
         isCombatON = false;
         Ship = GameObject.Find("Vaisseau Spatial");
-        
+        UI= GameObject.Find("BossFigthUI");
+
+
     }
 
     // Update is called once per frame
@@ -38,6 +43,7 @@ public class CombatON : MonoBehaviour
     {
         comboff.combatOFF = false;
         isCombatON = true;
+        _butMinON.MinageON = false;
     }
 
     void ifCombatOn(bool test)
@@ -49,33 +55,32 @@ public class CombatON : MonoBehaviour
             xr_ori.transform.position=siege.transform.position;
             xr_ori.transform.rotation=siege.transform.rotation;
             canonDroit.transform.parent = mainDroite.transform;
-            canonDroit.transform.rotation = canonspawn.transform.rotation;
             canonGauche.transform.parent = mainGauche.transform;
-            canonGauche.transform.rotation = canonspawn.transform.rotation;
             Ship.GetComponent<followLevier>().enabled = true;
 
             // On active les scripts
-            GameObject.Find("BossFigthUI").SetActive(true);
-            if (GetComponent<RightRayCastShooter>() != null) GetComponent<RightRayCastShooter>().enabled = true;
-            if (GetComponent<LeftRayCastShooter>() != null) GetComponent<LeftRayCastShooter>().enabled = true;
+            UI.SetActive(true);
+            canonDroit.GetComponent<RightRayCastShooter>().enabled = true;
+            canonGauche.GetComponent<LeftRayCastShooter>().enabled = true;
 
         }
         else
         {
-            //On range les cannons
-            canonDroit.transform.parent = canonspawn.transform;
-            canonDroit.transform.position=canonspawn.transform.position;
-            canonDroit.transform.rotation=canonspawn.transform.rotation;
-            canonGauche.transform.parent = canonspawn.transform;
-            canonGauche.transform.position = canonspawn.transform.position;
-            canonGauche.transform.rotation = canonspawn.transform.rotation;
-            Ship.GetComponent<followLevier>().enabled = false;
+            if (!_butMinON.MinageON)
+            {
+                //On range les cannons
+                canonDroit.transform.parent = canonspawn.transform;
+                canonDroit.transform.position = canonspawn.transform.position;
+                canonGauche.transform.parent = canon.transform;
+                canonGauche.transform.position = canon.transform.position;
+                Ship.GetComponent<followLevier>().enabled = false;
 
-            //On desactive les scripts 
-            GameObject.Find("BossFigthUI").SetActive(true);
+                //On desactive les scripts 
+                UI.SetActive(false);
 
-            if (GetComponent<RightRayCastShooter>()!=null) GetComponent<RightRayCastShooter>().enabled = false;
-            if(GetComponent<LeftRayCastShooter>()!=null) GetComponent<LeftRayCastShooter>().enabled = false;
+                canonDroit.GetComponent<RightRayCastShooter>().enabled = false;
+                canonGauche.GetComponent<LeftRayCastShooter>().enabled = false;
+            }
         }
 
     }

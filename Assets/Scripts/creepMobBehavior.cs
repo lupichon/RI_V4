@@ -10,7 +10,7 @@ public class _creepMobBehavior : MonoBehaviour
     int _damageE = 1;
     Transform _tfEnemy;
     Vector3 _directionEnemy;
-    float _speedE = 2f, _lifeSpanE = 30f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
+    float _speedE = 2f, _lifeSpanE = 60f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
     Vector3 _shipPositionE;
 
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class _creepMobBehavior : MonoBehaviour
             _deathTimer += Time.deltaTime;
             if(_deathTimer > _deathCooldown)
             {
-                Destroy(this);
+                Destroy(_tfEnemy.gameObject);
             }
         }
        

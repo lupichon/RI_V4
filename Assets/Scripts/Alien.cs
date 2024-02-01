@@ -115,6 +115,7 @@ public class Alien : MonoBehaviour
             _laserInst.GetComponent<Rigidbody>().velocity = -_rifle.transform.up * 4;
 
             AudioSource.PlayOneShot(Tir);
+            Destroy(_laserInst, 5);
 
             temps = Time.time;
         }

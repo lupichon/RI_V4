@@ -27,6 +27,7 @@ TagManager:
   - creepMob
   - munitions
   - munitionsennemi
+  - SCI-FI
   layers:
   - Default
   - TransparentFX

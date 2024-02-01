@@ -66,8 +66,8 @@ public class LeftRayCastShooter : MonoBehaviour
                     {
                         if (_tfHit.tag == "creepMob" && _weaponType == 2)
                         {
-                            Debug.Log("hit");
-                            Destroy(hit.collider.gameObject);
+                            hit.collider.gameObject.GetComponent<Animator>().SetBool("isDead", true);
+                            hit.collider.gameObject.GetComponent<_creepMobBehavior>().isDead = true;
                         }
                     }
 

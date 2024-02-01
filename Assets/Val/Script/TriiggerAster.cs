@@ -32,6 +32,8 @@ public class TriiggerAster : MonoBehaviour
                     Minage._score += 1 ;
 
                     AudioSource.PlayOneShot(Audio);
+                    Debug.Log("ahhhhhhhh");
+
 
                     Destroy(other.gameObject);
                     //Debug.Log("Destruction aster or");

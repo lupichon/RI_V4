@@ -6,7 +6,7 @@ public class EventSequence : MonoBehaviour
 {
     [SerializeField] SpawnAliens Aliens;
     [SerializeField] instanciateur inst;
-    float _alienSpawnTimer = 0, _alienSpawnCD = 120f, bossTimer = 0, bossCD= 20f;
+    float _alienSpawnTimer = 0, _alienSpawnCD = 120f, bossTimer = 0, bossCD= 5f;
     public bool hasFightStarted = false;
     // Start is called before the first frame update
     void Start()

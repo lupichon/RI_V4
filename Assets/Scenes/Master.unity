@@ -10992,6 +10992,7 @@ Transform:
   - {fileID: 1608225877}
   - {fileID: 1991455268}
   - {fileID: 337425210}
+  - {fileID: 876857497}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &409184911
@@ -25317,6 +25318,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f2f01264616214ba79f88c8f46c15f, type: 3}
+--- !u!1 &876857496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876857497}
+  m_Layer: 0
+  m_Name: CibleMOB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &876857497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876857496}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -63.6, y: -4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 409184910}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877068043
 GameObject:
   m_ObjectHideFlags: 0
@@ -39754,6 +39786,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -3813545832519583171, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  destruitrock: {fileID: 8300000, guid: 6c4e5374d2e33e24b888d5a734599715, type: 3}
+  XR: {fileID: 1454801397}
 --- !u!1 &1512519669
 GameObject:
   m_ObjectHideFlags: 0
@@ -49178,7 +49212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376538823}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d905453c0988a644c9a4f14bd3f2a3e8, type: 3}
   m_Name: 
@@ -49209,6 +49243,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -2391002164147862136, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  destruitrock: {fileID: 8300000, guid: 6c4e5374d2e33e24b888d5a734599715, type: 3}
+  XR: {fileID: 1454801397}
 --- !u!120 &1942664438
 LineRenderer:
   serializedVersion: 2

@@ -8,7 +8,7 @@ public class BossBehavior : MonoBehaviour
     float _DeathLength = 3f, _deathTimer = 0; 
     public AudioClip mortBoss;
     public AudioSource XR;
-    bool isDead = false;
+    public bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {

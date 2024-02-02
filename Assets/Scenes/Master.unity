@@ -19496,8 +19496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807267700}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.827, y: -0.359, z: 59.58}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.09, y: -0.359, z: 75.14}
   m_LocalScale: {x: 3, y: 1, z: 2.9348025}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37843,6 +37843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table Centrale 2
       objectReference: {fileID: 0}
+    - target: {fileID: 184930, guid: 6ffa7d55296318341acf5521f4bbae00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 450284, guid: 6ffa7d55296318341acf5521f4bbae00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -45230,6 +45234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mortBoss: {fileID: 8300000, guid: db48cb05c74c28946bb86c67297b8c6c, type: 3}
   XR: {fileID: 1454801397}
+  isDead: 0
 --- !u!1001 &1776849583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47237,6 +47242,7 @@ GameObject:
   - component: {fileID: 1857643238}
   - component: {fileID: 1857643239}
   - component: {fileID: 1857643240}
+  - component: {fileID: 1857643241}
   m_Layer: 6
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -47602,6 +47608,20 @@ MonoBehaviour:
   HitNous: {fileID: 8300000, guid: b9c56ce815493b143bbb8674b01ed837, type: 3}
   AudioSource: {fileID: 1454801397}
   main: {fileID: 1887852957}
+  _ascenceur: {fileID: 0}
+--- !u!114 &1857643241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857643226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb7087163ff44840b4668b119ebdd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss: {fileID: 1775187699}
 --- !u!4 &1860010459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439240, guid: 548a40efc092c6f408cc4d1691b171cc,

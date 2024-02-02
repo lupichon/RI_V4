@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventSequence : MonoBehaviour
 {
     [SerializeField] SpawnAliens Aliens;
-    float _alienSpawnTimer = 0, _alienSpawnCD = 120f;
+    float _alienSpawnTimer = 0, _alienSpawnCD = 30f;
     public bool hasFightStarted = false;
     // Start is called before the first frame update
     void Start()

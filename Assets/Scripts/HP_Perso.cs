@@ -19,11 +19,12 @@ public class HP_Perso : MonoBehaviour
     public AudioSource AudioSource;
 
     public SkinnedMeshRenderer main;
+    public GameObject _ascenceur;
     // Start is called before the first frame update
     void Start()
     {
         _hpPerso = 100;
-        
+        _ascenceur = GameObject.Find("Ascenceur");
     }
 
     // Update is called once per frame
@@ -91,10 +92,7 @@ public class HP_Perso : MonoBehaviour
             player.transform.position = _respawn.transform.position;
             player.transform.rotation = _respawn.transform.rotation;
             _hpPerso = 100;
-
-
-
-
+            _ascenceur.GetComponent<Transform>().localPosition = new Vector3(0, 0, 0);
         }
 
     }

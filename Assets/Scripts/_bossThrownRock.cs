@@ -13,13 +13,20 @@ public class _bossThrownRock : MonoBehaviour
     float _lifeSpan = 30f;
     float _age = 0;
     Vector3 _shipPosition;
-    
+
+    public AudioClip mortmob;
+    public AudioClip Hitnous;
+
+    public AudioSource XR;
+
     // Start is called before the first frame update
     void Start()
     {
         _tfRock = GetComponent<Transform>();
         _direction = new Vector3(0, 0, 1);
         _shipPosition = new Vector3(0, 0, -12);
+        XR = GameObject.Find("Ambiance").GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -30,12 +37,15 @@ public class _bossThrownRock : MonoBehaviour
         
         if(_age>_lifeSpan)
         {
+            XR.PlayOneShot(mortmob);
             Destroy(_tfRock.gameObject);
         }
         if(_tfRock.position.z> _shipPosition.z)
         {
             //Debug.Log("Destroy");
             HealthUpdate(_damage);
+            XR.PlayOneShot(Hitnous);
+
             Destroy(_tfRock.gameObject);
         }
     }

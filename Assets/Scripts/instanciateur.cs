@@ -5,12 +5,12 @@ using UnityEngine;
 public class instanciateur : MonoBehaviour
 {
     public GameObject  _prefabPlasmaWeakRock, _prefabIonWeakRock, _prefabEnemy;
-    int _nbRock , _nbEnenemy ,_choixRock , _waveNumber =1;
+    int _nbRock, _nbEnenemy, _choixRock, _waveNumber = 1, _totalWaves = 2;
     Quaternion _rotationVide, _rotationEnemy;
     Vector3 _spawnPositionRock , _spawnPositionEnemy;
     float _spawnCooldown = 1f , _spawnTimer = 0 , _waveTempo=3f , _waveTimer=0;
-    bool isFightEnded = false, _hasWaveEnded = false, FightStarted = false;
-    
+    public bool isFightEnded = false, _hasWaveEnded = false, FightStarted = true, isinit = false;
+    [SerializeField] GameObject boss; 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class instanciateur : MonoBehaviour
         _spawnPositionRock = new Vector3(16, 7, -85);
         _spawnPositionEnemy = new Vector3(16, 7, -85);
         _rotationEnemy = new Quaternion(0, 0, 0, 0);
-        
+        FightStarted = false;
 
     }
 
@@ -96,28 +96,39 @@ public class instanciateur : MonoBehaviour
             _endWave();
         }
     }
-
+    void StartFight()
+    {
+        if (!isinit)
+        {
+            boss.SetActive(true);
+            isinit = true;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        
-        if (!isFightEnded)
+        if (FightStarted)
         {
-            switch (_waveNumber)
+            StartFight();
+            if (!isFightEnded)
             {
-                case 1:
-                    _spawnWave1();
-                    break;
-                case 2:
-                    _spawnWave2();
-                    break;
-                default:
-                    Debug.Log("Combat Terminé");
-                    isFightEnded = true;
-                    break;
+                switch (_waveNumber)
+                {
+                    case 1:
+                        _spawnWave1();
+                        break;
+                    case 2:
+                        _spawnWave2();
+                        break;
+                    default:
+                        Debug.Log("Combat Terminé");
+                        isFightEnded = true;
+                        break;
+                }
+
             }
-            
         }
+        
         if (_hasWaveEnded)
         {
             _waveTimer += Time.deltaTime;
@@ -127,5 +138,13 @@ public class instanciateur : MonoBehaviour
     public bool hasFightStarted()
     {
         return (FightStarted);
+    }
+    public int getWaveNumber()
+    {
+        return (_waveNumber);
+    }
+    public int getTotalWave()
+    {
+        return _totalWaves;
     }
 }

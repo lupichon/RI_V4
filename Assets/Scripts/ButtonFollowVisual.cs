@@ -15,6 +15,8 @@ public class ButtonFollowVisual : MonoBehaviour
     public Vector3 localAxis;
     private Transform pokeAttachTransform;
     private bool isFollowing = false;
+    private GameObject Vaisseau;
+    private ParticleSystem ps;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,10 @@ public class ButtonFollowVisual : MonoBehaviour
         interactable.hoverEntered.AddListener(Follow);
         interactable.hoverExited.AddListener(Reset);
         interactable.selectEntered.AddListener(Freeze);
+        Vaisseau = GameObject.Find("Vaisseau Spatial");
+        ps = GameObject.Find("Pa").GetComponent<ParticleSystem>();
+        var em = ps.emission;
+        em.enabled = false;
     }
 
     public void Follow(BaseInteractionEventArgs hover)
@@ -67,7 +73,13 @@ public class ButtonFollowVisual : MonoBehaviour
     {
         if (freeze)
         {
-            GameObject.Find("Vaisseau Spatial").GetComponent<TorpedoToTarget>().isShooting();
+            Vaisseau.GetComponent<TorpedoToTarget>().isShooting();
+            var em = ps.emission;
+            em.enabled = true;
+           
+           
+            //rticleSystemTropille.GetComponent<ParticleSystem>().enableEmission = true;
+
             return;
         }
 

@@ -12,11 +12,12 @@ public class TorpedoToTarget : MonoBehaviour
 
     public void isShooting()
     {
+        Debug.Log("is shooting");
         shoot = true;
     }
     void Start()
     {
-        target = GameObject.Find("Boss").transform;
+        target = GameObject.Find("targetboss").transform;
         shoot = false;
 
     }

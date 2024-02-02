@@ -9832,12 +9832,7 @@ Transform:
   - {fileID: 1775187696}
   - {fileID: 599843983}
   - {fileID: 1154703368}
-<<<<<<< HEAD
-  - {fileID: 654316643}
-  m_Father: {fileID: 0}
-=======
   m_Father: {fileID: 409184910}
->>>>>>> 644d4d885a24b67b93d5907b999bcfa64740c2c7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &344019550 stripped
 Transform:

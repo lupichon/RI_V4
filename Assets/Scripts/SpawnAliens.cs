@@ -9,6 +9,9 @@ public class SpawnAliens : MonoBehaviour
     public GameObject _alien;
     public GameObject _spawnPointAlien;
 
+    public AudioClip AlerteAlien;
+    public AudioSource XR;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,9 @@ public class SpawnAliens : MonoBehaviour
             for(int i = 0;i <_nbAliens;i++)
             {
                 Instantiate(_alien, _spawnPointAlien.transform.position,Quaternion.identity);
+                XR.PlayOneShot(AlerteAlien);
+                
+
             }
             _estEnCombat = true;
         }

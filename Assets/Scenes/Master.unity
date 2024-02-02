@@ -9832,6 +9832,7 @@ Transform:
   - {fileID: 1775187696}
   - {fileID: 599843983}
   - {fileID: 1154703368}
+  - {fileID: 654316643}
   m_Father: {fileID: 409184910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &344019550 stripped
@@ -13529,7 +13530,7 @@ PrefabInstance:
     - target: {fileID: 3232833546742675902, guid: 541985593595fab46a3f4de789334613,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -210
+      value: -328
       objectReference: {fileID: 0}
     - target: {fileID: 3613525466070232676, guid: 541985593595fab46a3f4de789334613,
         type: 3}
@@ -36393,6 +36394,7 @@ MonoBehaviour:
   scoreText: {fileID: 84042477}
   minage: {fileID: 1171779068}
   carac: {fileID: 1857643239}
+  st: {fileID: 0}
   Sell: {fileID: 8300000, guid: ceb58d97739eef341a124665c034f8cb, type: 3}
   XR: {fileID: 1454801397}
 --- !u!1 &1350210363

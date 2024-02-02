@@ -20,32 +20,12 @@ public class SpawnAliens : MonoBehaviour
     public void spawnAlien()
     {
         for(int i =0; i< _nbAliens; i++) Instantiate(_alien, _spawnPointAlien.transform.position, Quaternion.identity);
+        XR.PlayOneShot(AlerteAlien);
 
     }
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        if(!_estEnCombat)
-        {
 
-            for(int i = 0;i <_nbAliens;i++)
-            {
-                Instantiate(_alien, _spawnPointAlien.transform.position,Quaternion.identity);
-                XR.PlayOneShot(AlerteAlien);
-                
-
-            }
-            _estEnCombat = true;
-        }
-=======
-       
->>>>>>> Stashed changes
-          /*
-        if (!GameObject.Find("_alien"))
-        {
-            _estEnCombat = false;
-        }
-          */
     }
 }

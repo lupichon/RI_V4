@@ -31,7 +31,7 @@ public class TriiggerAster : MonoBehaviour
                 {
                     Minage._score += 1 ;
 
-                    AudioSource.PlayOneShot(Audio);
+                    AudioSource.PlayOneShot(Audio,1f);
                     Debug.Log("ahhhhhhhh");
 
 

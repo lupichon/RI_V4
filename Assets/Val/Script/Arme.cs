@@ -79,7 +79,7 @@ public class Arme : MonoBehaviour
         if (hit.collider.CompareTag("gold"))
         {
 
-            AudioSource.PlayOneShot(Audio);
+            AudioSource.PlayOneShot(Audio,0.1f);
 
             if (hit.distance < maxRaycastDistance)
             {

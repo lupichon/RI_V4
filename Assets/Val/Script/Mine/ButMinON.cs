@@ -16,6 +16,7 @@ public class ButMinON : MonoBehaviour
     public ParticleSystem part;
     [SerializeField] CombatON _combatON;
     public bool MinageON;
+    bool play =false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,14 +51,18 @@ public class ButMinON : MonoBehaviour
             canon.transform.parent = mainDroite.transform;
             Ship.GetComponent<followLevier>().enabled = true;
             _minage.enabled = true;
-            part.Play();
-            
+            if (!play)
+            {
+                play = true;
+                part.Play();
+            }
 
         }
         else
         {
             if (!_combatON.isCombatON)
             {
+                if (play) play = false;
                 canon.transform.parent = canonspawn.transform;
                 canon.transform.position = canonspawn.transform.position;
                 canon.transform.rotation = canonspawn.transform.rotation;

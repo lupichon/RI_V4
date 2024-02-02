@@ -9,7 +9,7 @@ public class instanciateur : MonoBehaviour
     Quaternion _rotationVide, _rotationEnemy;
     Vector3 _spawnPositionRock , _spawnPositionEnemy;
     float _spawnCooldown = 1f , _spawnTimer = 0 , _waveTempo=3f , _waveTimer=0;
-    bool isFightEnded = false , _hasWaveEnded=false;
+    bool isFightEnded = false, _hasWaveEnded = false, FightStarted = false;
     
     // Start is called before the first frame update
     void Start()
@@ -123,5 +123,9 @@ public class instanciateur : MonoBehaviour
             _waveTimer += Time.deltaTime;
         }
         _spawnTimer += Time.deltaTime;
+    }
+    public bool hasFightStarted()
+    {
+        return (FightStarted);
     }
 }

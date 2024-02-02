@@ -16,7 +16,7 @@ public class TorpedoToTarget : MonoBehaviour
     }
     void Start()
     {
-        target = GameObject.Find("Saturne").transform;
+        target = GameObject.Find("Boss").transform;
         shoot = false;
 
     }

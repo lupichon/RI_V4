@@ -10,6 +10,9 @@ public class SellButton : MonoBehaviour
     public Minage minage; // Variable de score
     public Caractéristiques carac;
 
+    public AudioClip Sell;
+    public AudioSource XR;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +36,8 @@ public class SellButton : MonoBehaviour
 
         // Mettez à jour le texte du score
         scoreText.Text.text = minage._score + "/150";
+
+        XR.PlayOneShot(Sell);
+
     }
 }

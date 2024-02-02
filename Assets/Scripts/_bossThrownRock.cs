@@ -10,7 +10,7 @@ public class _bossThrownRock : MonoBehaviour
     Transform _tfRock;
     Vector3 _direction;
     float _speed = 0.2f;
-    float _lifeSpan = 30f;
+    float _lifeSpan = 10000f;
     float _age = 0;
     Vector3 _shipPosition;
     float disttest = 0.3f;

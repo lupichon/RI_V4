@@ -36,6 +36,7 @@ public class Menu_Game : MonoBehaviour
             if(k!=3)
             {
                 tableauEntiers[k] = _caractéristiques._argentGagnée;
+                Debug.Log(k);
             }
             Array.Sort(tableauEntiers);
             Array.Reverse(tableauEntiers);

@@ -10,7 +10,7 @@ public class _creepMobBehavior : MonoBehaviour
     int _damageE = 20;
     Transform _tfEnemy;
     Vector3 _directionEnemy;
-    float _speedE = 0.2f, _lifeSpanE = 60f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
+    float _speedE = 0.2f, _lifeSpanE = 10000f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
     Vector3 _shipPositionE;
     Transform cible;
     [SerializeField] float disttest = 0.3f;

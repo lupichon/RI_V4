@@ -18,6 +18,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 553eb67b8efd2994c8509fef12498988, type: 2}
+    - target: {fileID: 5687905493600264469, guid: 27ad336f04a68044bb9b33d1c35ef556,
+        type: 3}
+      propertyPath: Hitnous
+      value: 
+      objectReference: {fileID: 8300000, guid: b9c56ce815493b143bbb8674b01ed837, type: 3}
+    - target: {fileID: 5687905493600264469, guid: 27ad336f04a68044bb9b33d1c35ef556,
+        type: 3}
+      propertyPath: mortmob
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4e5374d2e33e24b888d5a734599715, type: 3}
     - target: {fileID: 6762431008416541937, guid: 27ad336f04a68044bb9b33d1c35ef556,
         type: 3}
       propertyPath: m_Name

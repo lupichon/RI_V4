@@ -9824,15 +9824,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337425209}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000004172325, y: 0.4304449, z: -0.026260436}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -52.22627, y: 0.4304449, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1775187696}
   - {fileID: 599843983}
   - {fileID: 1154703368}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 409184910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &344019550 stripped
 Transform:
@@ -10991,6 +10991,7 @@ Transform:
   - {fileID: 592861567}
   - {fileID: 1608225877}
   - {fileID: 1991455268}
+  - {fileID: 337425210}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &409184911
@@ -14920,6 +14921,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5243507653502562868, guid: 0f5d8cab47cc81a4da701cc38f789ca5,
+        type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1492384576}
     - target: {fileID: 5243507653502562868, guid: 0f5d8cab47cc81a4da701cc38f789ca5,
         type: 3}
       propertyPath: _prefabEnemy
@@ -37557,6 +37563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aliens: {fileID: 1991455269}
+  inst: {fileID: 1013001743}
   hasFightStarted: 0
 --- !u!4 &1383214110
 Transform:
@@ -57353,5 +57360,4 @@ SceneRoots:
   - {fileID: 409184910}
   - {fileID: 42646346}
   - {fileID: 1783978636}
-  - {fileID: 337425210}
   - {fileID: 807267701}

@@ -21,6 +21,11 @@ public class RightRayCastShooter : MonoBehaviour
     float _weaponChangeTimer = 0;
     float _weaponChangeCooldown = 1f;
     int _nbWeaponType = 3;
+
+    public AudioClip destruitrock;
+    
+
+    public AudioSource XR;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,11 +60,13 @@ public class RightRayCastShooter : MonoBehaviour
                 if (_tfHit.tag == "WeakToPlasma" && _weaponType == 0)
                 {
                     Destroy(hit.collider.gameObject);
+                    XR.PlayOneShot(destruitrock);
                 }
                 else
                 {
                     if (_tfHit.tag == "WeakToIon" && _weaponType == 1)
                     {
+                        XR.PlayOneShot(destruitrock);
                         Destroy(hit.collider.gameObject);
                     }
                     else

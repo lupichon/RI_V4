@@ -13,6 +13,11 @@ public class _creepMobBehavior : MonoBehaviour
     float _speedE = 2f, _lifeSpanE = 60f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
     Vector3 _shipPositionE;
 
+    public AudioClip mortmob;
+    public AudioClip Hitnous;
+
+    public AudioSource XR;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,8 @@ public class _creepMobBehavior : MonoBehaviour
         _directionEnemy = new Vector3(0, 0, -1);
         _shipPositionE = new Vector3(0, 0, -12);
         _ani = GetComponent<Animator>();
+        XR = GameObject.Find("Ambiance").GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -33,12 +40,15 @@ public class _creepMobBehavior : MonoBehaviour
 
             if (_ageE > _lifeSpanE)
             {
+                XR.PlayOneShot(mortmob);
                 Destroy(_tfEnemy.gameObject);
             }
             if (_tfEnemy.position.z > _shipPositionE.z)
             {
                 //Debug.Log("Destroy");
                 HealthUpdateE(_damageE);
+                XR.PlayOneShot(Hitnous);
+
                 Destroy(_tfEnemy.gameObject);
             }
         }
@@ -47,6 +57,7 @@ public class _creepMobBehavior : MonoBehaviour
             _deathTimer += Time.deltaTime;
             if(_deathTimer > _deathCooldown)
             {
+                XR.PlayOneShot(mortmob);
                 Destroy(_tfEnemy.gameObject);
             }
         }

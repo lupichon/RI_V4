@@ -32700,9 +32700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dortoire
-
-'
+  m_text: Dortoir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36326,6 +36324,8 @@ MonoBehaviour:
   scoreText: {fileID: 84042477}
   minage: {fileID: 1171779068}
   carac: {fileID: 1857643239}
+  Sell: {fileID: 8300000, guid: ceb58d97739eef341a124665c034f8cb, type: 3}
+  XR: {fileID: 1454801397}
 --- !u!1 &1350210363
 GameObject:
   m_ObjectHideFlags: 0
@@ -48563,7 +48563,7 @@ PrefabInstance:
     - target: {fileID: 454826032084446261, guid: f00c8df389af47046baea2d14b531550,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3464539170958515750, guid: f00c8df389af47046baea2d14b531550,
         type: 3}
@@ -56747,6 +56747,8 @@ MonoBehaviour:
   comLVL: {fileID: 205625477}
   minLVL: {fileID: 210907173}
   carac: {fileID: 1857643239}
+  Buy: {fileID: 8300000, guid: 169441c4efdf206499d0bd1fb18143f3, type: 3}
+  XR: {fileID: 1454801397}
 --- !u!1 &2138625428
 GameObject:
   m_ObjectHideFlags: 0

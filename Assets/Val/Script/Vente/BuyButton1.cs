@@ -18,10 +18,14 @@ public class BuyButton1 : MonoBehaviour
 
     public Caractéristiques carac;
 
+    public AudioClip Buy;
+    public AudioSource XR;
+
     // Start is called before the first frame update
     void Start()
     {
        GetComponent<Button>().onClick.AddListener(SellButtonClicked);
+
 
 
     }
@@ -45,6 +49,8 @@ public class BuyButton1 : MonoBehaviour
             carac._niveauCommerce += comLVL._compteur; 
             carac._niveauMinage += minLVL._compteur;
             carac.prixUnit = carac.prixUnit * carac._niveauCommerce;
+            XR.PlayOneShot(Buy);
+
         }
 
         // Mettez � jour le texte du score

@@ -10,7 +10,18 @@ public class OpenCloseDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
+            Debug.Log("bbbb");
+            // Set the "character_nearby" parameter to true when the player enters
+            doorAnimator.SetBool("character_nearby", true);
+            //la porte s'ouvre
+
+            Porte_AudioSource.PlayOneShot(audioPorte);
+
+            //Debug.Log("Player entered the collider. character_nearby set to true.");
+        }
+        if (other.CompareTag("Alien"))
+        {
+            Debug.Log("bbbb");
             // Set the "character_nearby" parameter to true when the player enters
             doorAnimator.SetBool("character_nearby", true);
             //la porte s'ouvre
@@ -23,11 +34,11 @@ public class OpenCloseDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Alien"))
 
         {
 
-
+            Debug.Log("aaaa");
             // Reset the "character_nearby" parameter to false when the player leaves
             doorAnimator.SetBool("character_nearby", false);
             Porte_AudioSource.PlayOneShot(audioPorte);

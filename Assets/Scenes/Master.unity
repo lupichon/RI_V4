@@ -9832,6 +9832,7 @@ Transform:
   - {fileID: 1775187696}
   - {fileID: 599843983}
   - {fileID: 1154703368}
+  - {fileID: 654316643}
   m_Father: {fileID: 409184910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &344019550 stripped
@@ -36361,8 +36362,8 @@ MonoBehaviour:
   scoreText: {fileID: 84042477}
   minage: {fileID: 1171779068}
   carac: {fileID: 1857643239}
-  Sell: {fileID: 8300000, guid: ceb58d97739eef341a124665c034f8cb, type: 3}
-  XR: {fileID: 1454801397}
+  Sell: {fileID: 0}
+  XR: {fileID: 0}
 --- !u!1 &1350210363
 GameObject:
   m_ObjectHideFlags: 0
@@ -39754,6 +39755,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -3813545832519583171, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  destruitrock: {fileID: 0}
+  XR: {fileID: 0}
 --- !u!1 &1512519669
 GameObject:
   m_ObjectHideFlags: 0
@@ -47809,6 +47812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boss: {fileID: 1775187699}
+  "_caract\xE9ristiques": {fileID: 1857643239}
 --- !u!4 &1860010459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439240, guid: 548a40efc092c6f408cc4d1691b171cc,
@@ -49209,6 +49213,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -2391002164147862136, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  destruitrock: {fileID: 0}
+  XR: {fileID: 0}
 --- !u!120 &1942664438
 LineRenderer:
   serializedVersion: 2
@@ -56805,8 +56811,8 @@ MonoBehaviour:
   comLVL: {fileID: 205625477}
   minLVL: {fileID: 210907173}
   carac: {fileID: 1857643239}
-  Buy: {fileID: 8300000, guid: 169441c4efdf206499d0bd1fb18143f3, type: 3}
-  XR: {fileID: 1454801397}
+  Buy: {fileID: 0}
+  XR: {fileID: 0}
 --- !u!1 &2138625428
 GameObject:
   m_ObjectHideFlags: 0

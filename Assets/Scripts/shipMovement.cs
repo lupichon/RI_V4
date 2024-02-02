@@ -44,7 +44,6 @@ public class followLevier : MonoBehaviour
     void Update()
     {
         x++;
-        Debug.Log("x : " + x);
         Vector3 rotationUp = Vector3.right;
         if(totalRotationUp < 0.75 || Mathf.Sin(_tfRotLevier.eulerAngles.x- _tfShip.eulerAngles.x * Mathf.PI / 180)<0)
         {

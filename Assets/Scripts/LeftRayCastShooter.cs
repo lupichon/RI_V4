@@ -101,16 +101,16 @@ public class LeftRayCastShooter : MonoBehaviour
         switch (_weaponType)
         {
             case 0:
+                _aim.startColor = Color.black;
+                _aim.endColor = Color.black;
+                break;
+            case 1:
                 _aim.startColor = Color.red;
                 _aim.endColor = Color.red;
                 break;
-            case 1:
+            case 2:
                 _aim.startColor = Color.green;
                 _aim.endColor = Color.green;
-                break;
-            case 2:
-                _aim.startColor = Color.blue;
-                _aim.endColor = Color.blue;
                 break;
             default:
                 break;

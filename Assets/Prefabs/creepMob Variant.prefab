@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d629d61b525096b40ac98512878eda4d, type: 2}
+    - target: {fileID: 5114417320346655845, guid: 5afd1af3d47333f459a9daf744e7ddf4,
+        type: 3}
+      propertyPath: m_TagString
+      value: creepMob
+      objectReference: {fileID: 0}
     - target: {fileID: 5956278952768930056, guid: 5afd1af3d47333f459a9daf744e7ddf4,
         type: 3}
       propertyPath: m_Controller
@@ -110,7 +115,42 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8018368442328609463}
+    - targetCorrespondingSourceObject: {fileID: 7674759261756376287, guid: 5afd1af3d47333f459a9daf744e7ddf4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8443133421416633092}
+    - targetCorrespondingSourceObject: {fileID: 5114417320346655845, guid: 5afd1af3d47333f459a9daf744e7ddf4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967393883823174965}
   m_SourcePrefab: {fileID: 100100000, guid: 5afd1af3d47333f459a9daf744e7ddf4, type: 3}
+--- !u!1 &1056734586819938749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5114417320346655845, guid: 5afd1af3d47333f459a9daf744e7ddf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5210746092347168216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1967393883823174965
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056734586819938749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5695156
+  m_Center: {x: 0.00000042962927, y: 0.026260367, z: 0.43044493}
 --- !u!1 &2509192274533634311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7674759261756376287, guid: 5afd1af3d47333f459a9daf744e7ddf4,
@@ -150,7 +190,28 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: -0.05, y: 1.86, z: -0.03}
+--- !u!135 &8443133421416633092
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509192274533634311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

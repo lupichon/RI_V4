@@ -8,7 +8,7 @@ public class Elevator : MonoBehaviour
 
     private Collider _colliderPorteHaute, _colliderPorteBasse;
 
-    public GameObject _player;
+    public GameObject _player, _ship;
 
     public bool _playerOnElevator;
     public bool _elevatorDown;
@@ -27,6 +27,7 @@ public class Elevator : MonoBehaviour
         _player = GameObject.Find("XR Origin (XR Rig)");
         _colliderPorteHaute = GameObject.Find("Porte Haute").GetComponent<BoxCollider>();
         _colliderPorteBasse = GameObject.Find("Porte Basse").GetComponent<BoxCollider>();
+        _ship = GameObject.Find("Vaisseau Spatial");
     }
 
     void OnTriggerStay(Collider other)
@@ -104,7 +105,7 @@ public class Elevator : MonoBehaviour
         }
         else
         {
-            _player.GetComponent<Transform>().SetParent(null);
+            _player.GetComponent<Transform>().SetParent(_ship.transform);
         }
     }
 }

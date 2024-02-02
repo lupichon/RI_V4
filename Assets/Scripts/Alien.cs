@@ -8,7 +8,7 @@ public class Alien : MonoBehaviour
     private Vector3 _posJoueur;
     private Vector3 _posAlien;
     private Vector3 _translationX;
-    private float _translationZ = 1;
+    private float _translationZ = 3;
     private Quaternion _rotBalles;
     private GameObject _Joueur;
     private Transform _rifle;
@@ -92,7 +92,7 @@ public class Alien : MonoBehaviour
         directionVersJoueur.y = 0f;
 
         Quaternion rotationVersJoueur = Quaternion.LookRotation(directionVersJoueur);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, Time.deltaTime);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, 3*Time.deltaTime);
 
         if(_distance>7 && PV>0)
         {

@@ -28,6 +28,7 @@ TagManager:
   - munitions
   - munitionsennemi
   - SCI-FI
+  - Alien
   layers:
   - Default
   - TransparentFX

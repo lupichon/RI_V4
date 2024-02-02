@@ -6,7 +6,7 @@ using System;
 public class _bossThrownRock : MonoBehaviour
 {
 
-    int _damage = 20;
+    int _damage = 2;
     Transform _tfRock;
     Vector3 _direction;
     float _speed = 0.2f;

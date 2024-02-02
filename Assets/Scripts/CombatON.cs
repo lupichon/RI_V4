@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class CombatON : MonoBehaviour
     public GameObject mainGauche;
     public GameObject canonspawn;
     GameObject UI;
+    GameObject volant;
     GameObject canon;
     public CombatOFF comboff;
     [SerializeField] ButMinON _butMinON;
@@ -30,7 +32,7 @@ public class CombatON : MonoBehaviour
         Ship = GameObject.Find("Vaisseau Spatial");
         UI= GameObject.Find("BossFigthUI");
 
-
+        volant = GameObject.Find("Wheel");
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class CombatON : MonoBehaviour
             UI.SetActive(true);
             canonDroit.GetComponent<RightRayCastShooter>().enabled = true;
             canonGauche.GetComponent<LeftRayCastShooter>().enabled = true;
+            volant.SetActive(false);
 
         }
         else
@@ -77,7 +80,7 @@ public class CombatON : MonoBehaviour
 
                 //On desactive les scripts 
                 UI.SetActive(false);
-
+                volant.SetActive(true);
                 canonDroit.GetComponent<RightRayCastShooter>().enabled = false;
                 canonGauche.GetComponent<LeftRayCastShooter>().enabled = false;
             }

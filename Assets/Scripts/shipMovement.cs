@@ -29,6 +29,7 @@ public class followLevier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         RotLevier = GameObject.FindWithTag("RotationLever");
         _tfRotLevier = RotLevier.GetComponent<Transform>();
         TranslationLevier = GameObject.FindWithTag("TranslationLever");
@@ -37,12 +38,14 @@ public class followLevier : MonoBehaviour
        // _rbShip = GetComponent<Rigidbody>();
 
         //  _grab = GameObject.FindWithTag("main").GetComponent<handInputsListener>()._gripValue;
+        */
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         x++;
         Debug.Log("x : " + x);
         Vector3 rotationUp = Vector3.right;
@@ -88,7 +91,10 @@ public class followLevier : MonoBehaviour
             TranslationLevier.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         _tfShip.Translate(Vector3.right * -Mathf.Sin(_tfTranslationLevier.eulerAngles.z * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
-        _tfShip.Translate(Vector3.forward * Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
+       _tfShip.Translate(Vector3.forward * Mathf.Sin(_tfTranslationLevier.eulerAngles.x * Mathf.PI / 180) * movementSpeed * Time.deltaTime);
+        */
     }
+
+        
 
 }

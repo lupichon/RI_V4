@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffc8cd4686d53f469f2e285ab74cd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mortmob: {fileID: 8300000, guid: 6c4e5374d2e33e24b888d5a734599715, type: 3}
+  Hitnous: {fileID: 8300000, guid: b9c56ce815493b143bbb8674b01ed837, type: 3}
+  XR: {fileID: 0}
 --- !u!111 &9007322870858382880
 Animation:
   m_ObjectHideFlags: 0

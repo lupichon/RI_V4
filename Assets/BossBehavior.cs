@@ -13,7 +13,7 @@ public class BossBehavior : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        
+        GetComponent<Transform>().gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {

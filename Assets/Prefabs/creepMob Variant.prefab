@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  mortmob: {fileID: 8300000, guid: 09aea175cd3155f4084c64cc1937475a, type: 3}
+  Hitnous: {fileID: 8300000, guid: b9c56ce815493b143bbb8674b01ed837, type: 3}
+  XR: {fileID: 0}
 --- !u!135 &8018368442328609463
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,16 +5,30 @@ using TMPro;
 
 public class FigthInfo : MonoBehaviour
 {
-    TextMeshProUGUI Text;
+    TextMeshPro Text;
+    [SerializeField] instanciateur inst;
     // Start is called before the first frame update
     void Start()
     {
-        Text = GetComponent<TextMeshProUGUI>();
+        Text = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Text.text = "Combat Pas commencé";
+        if (!inst.FightStarted) Text.text = "Combat Pas commencé";
+        else
+        {
+
+            if (!inst.isFightEnded)
+            {
+                Text.text = "vague #" + inst.getWaveNumber().ToString() + "/" + inst.getTotalWave().ToString();
+            }
+            else
+            {
+
+                Text.text = "Vagues anéanties \n c'est l'heure de \nla TORPILLE !!!";
+            }
+        }
     }
 }

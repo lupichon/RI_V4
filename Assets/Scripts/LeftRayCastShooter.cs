@@ -20,6 +20,10 @@ public class LeftRayCastShooter : MonoBehaviour
     float _weaponChangeTimer = 0;
     float _weaponChangeCooldown = 1f;
     int _nbWeaponType = 3;
+
+    public AudioClip destruitrock;
+
+    public AudioSource XR;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,12 +58,16 @@ public class LeftRayCastShooter : MonoBehaviour
 
                 if (_tfHit.tag == "WeakToPlasma" && _weaponType == 0)
                 {
+                    XR.PlayOneShot(destruitrock);
+
                     Destroy(hit.collider.gameObject);
                 }
                 else
                 {
                     if (_tfHit.tag == "WeakToIon" && _weaponType == 1)
                     {
+                        XR.PlayOneShot(destruitrock);
+
                         Destroy(hit.collider.gameObject);
                     }
                     else
@@ -101,16 +109,16 @@ public class LeftRayCastShooter : MonoBehaviour
         switch (_weaponType)
         {
             case 0:
+                _aim.startColor = Color.black;
+                _aim.endColor = Color.black;
+                break;
+            case 1:
                 _aim.startColor = Color.red;
                 _aim.endColor = Color.red;
                 break;
-            case 1:
+            case 2:
                 _aim.startColor = Color.green;
                 _aim.endColor = Color.green;
-                break;
-            case 2:
-                _aim.startColor = Color.blue;
-                _aim.endColor = Color.blue;
                 break;
             default:
                 break;

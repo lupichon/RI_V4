@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnAliens : MonoBehaviour
 {
     private bool _estEnCombat = false;
-    private int _nbAliens = 1;
+    private int _nbAliens = 3;
     public GameObject _alien;
     public GameObject _spawnPointAlien;
 
@@ -17,10 +17,15 @@ public class SpawnAliens : MonoBehaviour
     {
         
     }
+    public void spawnAlien()
+    {
+        for(int i =0; i< _nbAliens; i++) Instantiate(_alien, _spawnPointAlien.transform.position, Quaternion.identity);
 
+    }
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         if(!_estEnCombat)
         {
 
@@ -33,6 +38,9 @@ public class SpawnAliens : MonoBehaviour
             }
             _estEnCombat = true;
         }
+=======
+       
+>>>>>>> Stashed changes
           /*
         if (!GameObject.Find("_alien"))
         {

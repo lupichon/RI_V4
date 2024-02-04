@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpawnAliens : MonoBehaviour
 {
-    private int _nbAliens = 3;
+    private int _nbAliens = 1;
     public GameObject _alien;
     public GameObject _spawnPointAlien;
 

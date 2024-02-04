@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ButtonFollowVisual : MonoBehaviour
 {
+    // Script gerant le comportement du bouton de lancement de la torpille
     public Transform visualTarget;
     private XRBaseInteractable interactable;
     public Vector3 initialLocalPos;
@@ -17,16 +18,20 @@ public class ButtonFollowVisual : MonoBehaviour
     private bool isFollowing = false;
     private GameObject Vaisseau;
     private ParticleSystem ps;
-    // Start is called before the first frame update
+
     void Start()
     {
         initialLocalPos = visualTarget.localPosition;
-
         interactable = GetComponent<XRBaseInteractable>();
+
         interactable.hoverEntered.AddListener(Follow);
         interactable.hoverExited.AddListener(Reset);
         interactable.selectEntered.AddListener(Freeze);
+
+        // On cherche le vaisseau
         Vaisseau = GameObject.Find("Vaisseau Spatial");
+
+        // On cherche et on desactive le particle system sur la torpille
         ps = GameObject.Find("Pa").GetComponent<ParticleSystem>();
         var em = ps.emission;
         em.enabled = false;
@@ -70,16 +75,13 @@ public class ButtonFollowVisual : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // Quand le bouton est enfonce, on entre dans le if (freeze) et on autorise le tir et l'emission de particules
         if (freeze)
         {
             Vaisseau.GetComponent<TorpedoToTarget>().isShooting();
             var em = ps.emission;
             em.enabled = true;
-           
-           
-            //rticleSystemTropille.GetComponent<ParticleSystem>().enableEmission = true;
-
             return;
         }
 

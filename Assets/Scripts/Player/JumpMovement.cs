@@ -6,31 +6,21 @@ public class JumpMovement : MonoBehaviour
 {
     public Rigidbody _rigidBodyPlayer;
 
+    // "Hauteur" du saut
     public float _jumpAmount = 10;
-    // Start is called before the first frame update
+
     void Start()
     {
+        // On recupere le rigidbody du joueur
         _rigidBodyPlayer = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            // Si on presse espace, une force de poussee vers le haut fait monter le joueur
             _rigidBodyPlayer.AddForce(Vector3.up * _jumpAmount, ForceMode.Impulse);
         }
     }
 }
-
-/*
-public Rigidbody2D rb;
-public float jumpAmount = 10;
-void Update()
-{
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-    }
-}
-*/

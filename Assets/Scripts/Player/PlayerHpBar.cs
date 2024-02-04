@@ -1,3 +1,7 @@
+/*
+    Fonction qui affiche les points de vie du vaisseau 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/*
+   Script qui permet de détruire les alliés du boss mirroir a celui du LeftRayCastShooter
+*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,8 +54,6 @@ public class RightRayCastShooter : MonoBehaviour
         RaycastHit hit;
         _positionDepart = _tfHand.position;
         _directionRay = -_tfHand.up;
-        //Debug.DrawRay(_positionDepart, _directionRay, Color.green);
-        //Debug.Log(_gripState);
         if (_gripState > 0.5)
         {
             if (Physics.Raycast(_positionDepart, _directionRay, out hit, 100) && _rayOn && _shootTimer >= _shootCooldown)

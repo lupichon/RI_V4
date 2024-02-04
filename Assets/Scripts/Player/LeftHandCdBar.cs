@@ -1,3 +1,8 @@
+/*
+    Fonction qui affiche le temps de refroidissement de l'arme de gauche 
+*/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

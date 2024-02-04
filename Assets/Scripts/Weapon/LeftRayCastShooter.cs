@@ -1,3 +1,7 @@
+/*
+   Script qui permet de détruire les alliés du boss
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +45,10 @@ public class LeftRayCastShooter : MonoBehaviour
     //gestion du tir 
     void _shootAttempt()
     {
+        //On augmente le timer pour savoir si l'on peut tiré
         _shootTimer += Time.deltaTime;
+
+        // On récupére la valeur du grip
         float _gripState = _grip.action.ReadValue<float>();
 
         RaycastHit hit;
@@ -51,11 +58,11 @@ public class LeftRayCastShooter : MonoBehaviour
 
         if (_gripState > 0.5)
         {
-
+            //On test si l'on peut tirer
             if (Physics.Raycast(_positionDepart, _directionRay, out hit, 100) && _rayOn && _shootTimer >= _shootCooldown)
             {
                 Transform _tfHit = hit.collider.GetComponent<Transform>();
-
+                // On test si l'on touche la cible avec le bon type d'arme correspondant a sa faiblesse 
                 if (_tfHit.tag == "WeakToPlasma" && _weaponType == 0)
                 {
                     XR.PlayOneShot(destruitrock);
@@ -86,21 +93,21 @@ public class LeftRayCastShooter : MonoBehaviour
 
         }
     }
+    // On change de type d'arme si l'on ne l'a pas fait avant
     void _weaponTypeChange()
     {
+        
         float _primbuttonvalue = _primButton.action.ReadValue<float>();
         
-        //Debug.Log(" sdbsqdqs   " +_primbuttonvalue);
         _weaponChangeTimer += Time.deltaTime;
         if (_primbuttonvalue > 0.5f && _weaponChangeTimer > _weaponChangeCooldown)
         {
             Debug.Log("X");
             _weaponType = (_weaponType+1)%_nbWeaponType;
-            //Debug.Log(_weaponType);
             _weaponChangeTimer=0;
         }
     }
-
+    // on utilise un line renderer afin de crée un laser d'aide a la visée selon le type d'arme 
     void _weaponAimDraw()
     {
         

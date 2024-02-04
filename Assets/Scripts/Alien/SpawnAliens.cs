@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ce script permet dinstancier les aliens(la fonction spawnAlien est appelée dans un autre script)
+
 public class SpawnAliens : MonoBehaviour
 {
     private int _nbAliens = 3;

@@ -11,7 +11,7 @@ public class Menu_Game : MonoBehaviour
 {
     public BossBehavior _boss;
     string cheminFichier = Application.dataPath + "/Scores.txt";
-    public Caract�ristiques _caract�ristiques;
+    public Caractéristiques _caractéristiques;
     void Update()
     {
         if(_boss.isDead || PlayerHpBar._playerHealth == 0)                  //si le boss meurt ou que le vaisseau est détruit alors la partie est finie
@@ -31,13 +31,13 @@ public class Menu_Game : MonoBehaviour
                 }
             }
             int k = 0;
-            while(k<3 && _caract�ristiques._argentGagn�e < tableauEntiers[k])   //on cherche la place du score dans le tableau
+            while(k<3 && _caractéristiques._argentGagnée < tableauEntiers[k])   //on cherche la place du score dans le tableau
             {
                 k++;
             }
             if(k!=3)                                                                //le score obtenue par le joueur est supérieur aux trois meilleurs scores
             {
-                tableauEntiers[k] = _caract�ristiques._argentGagn�e;                //mise à jour du tableau
+                tableauEntiers[k] = _caractéristiques._argentGagnée;                //mise à jour du tableau
                 Debug.Log(k);
             }
             Array.Sort(tableauEntiers);

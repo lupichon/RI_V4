@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//ce script permet à l'astéroïde de tourner sur lui même
+
 public class RandomRotator : MonoBehaviour
 {
     

@@ -5,17 +5,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+//ce script permet la transition entre la fin de la partie et le menu du jeu 
+
 public class Menu_Game : MonoBehaviour
 {
     public BossBehavior _boss;
     string cheminFichier = Application.dataPath + "/Scores.txt";
-    public CaractÈristiques _caractÈristiques;
+    public Caract√©ristiques _caract√©ristiques;
     void Update()
     {
-        if(_boss.isDead || PlayerHpBar._playerHealth == 0)
+        if(_boss.isDead || PlayerHpBar._playerHealth == 0)                  //si le boss meurt ou que le vaisseau est d√©truit alors la partie est finie
         {
             int[] tableauEntiers = new int[3];
-            string[] lignesFichier = File.ReadAllLines(cheminFichier);
+            string[] lignesFichier = File.ReadAllLines(cheminFichier);      //lecture des lignes de score dans le fichier des parties pr√©c√©dentes
 
             foreach (string ligne in lignesFichier)
             {
@@ -24,33 +26,33 @@ public class Menu_Game : MonoBehaviour
                 {
                     if (int.TryParse(valeurs[i], out int entier))
                     {
-                        tableauEntiers[i] = entier;
+                        tableauEntiers[i] = entier;                         //on recupere ces valeurs
                     }
                 }
             }
             int k = 0;
-            while(k<3 && _caractÈristiques._argentGagnÈe < tableauEntiers[k])
+            while(k<3 && _caract√©ristiques._argentGagn√©e < tableauEntiers[k])   //on cherche la place du score dans le tableau
             {
                 k++;
             }
-            if(k!=3)
+            if(k!=3)                                                                //le score obtenue par le joueur est sup√©rieur aux trois meilleurs scores
             {
-                tableauEntiers[k] = _caractÈristiques._argentGagnÈe;
+                tableauEntiers[k] = _caract√©ristiques._argentGagn√©e;                //mise √† jour du tableau
                 Debug.Log(k);
             }
             Array.Sort(tableauEntiers);
             Array.Reverse(tableauEntiers);
 
-            EcrireTexteDansFichier(cheminFichier, tableauEntiers);
-            SceneManager.LoadScene("Menu");
+            EcrireTexteDansFichier(cheminFichier, tableauEntiers);                    //ecriture dans le fichier texte
+            SceneManager.LoadScene("Menu");                                           //on charge le menu  
         }
     }
     void EcrireTexteDansFichier(string chemin, int[] tableau)
     {
-        // Utiliser StreamWriter pour Ècrire dans le fichier (avec append: false pour Ècraser le contenu)
+        // Utiliser StreamWriter pour ÔøΩcrire dans le fichier (avec append: false pour ÔøΩcraser le contenu)
         using (StreamWriter writer = new StreamWriter(chemin, false))
         {
-            // …crire chaque valeur du tableau sur une nouvelle ligne
+            // ÔøΩcrire chaque valeur du tableau sur une nouvelle ligne
             for (int i = 0; i < tableau.Length; i++)
             {
                 writer.WriteLine(tableau[i]);

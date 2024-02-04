@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//ce script permet à Saturne de tourner sur lui même
+
 public class SaturneRotation : MonoBehaviour
 {
     //Start is called before the first frame update
@@ -14,6 +16,6 @@ public class SaturneRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Transform>().Rotate(0,_vitesseRotation * Time.deltaTime, 0) ;
+        GetComponent<Transform>().Rotate(0,_vitesseRotation * Time.deltaTime, 0) ;  
     }
 }

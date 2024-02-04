@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//ce script permet de gérer le comportement des aliens
+
 public class Alien : MonoBehaviour
 {
     private Vector3 _posJoueur;
     private Vector3 _posAlien;
-    private Vector3 _translationX;
     private float _translationZ = 3;
     private Quaternion _rotBalles;
     private GameObject _Joueur;
@@ -39,113 +40,93 @@ public class Alien : MonoBehaviour
     {
         _Joueur = GameObject.Find("XR Origin (XR Rig)");
         _rifle = transform.GetChild(1).transform.GetChild(0);
-        if(_rifle == null)
-        {
-            Debug.Log("aaa");
-        }
-        else
-        {
-            Debug.Log("bbb");
-        }
-        //_rifle = childTransform.gameObject;
-        _translationX = new Vector3(1, 0, 0);
-        //_translationZ = new Vector3(0, 0, 1);
+        
         _rotBalles = new Quaternion(90, 0, 0,0);
 
-        FireBullet[] armesTrouvees = FindObjectsOfType<FireBullet>();
+        FireBullet[] armesTrouvees = FindObjectsOfType<FireBullet>();       //récuperation des armes de la scene
         _arme1 = armesTrouvees[0];
         _arme2 = armesTrouvees[1];
         _arme3 = armesTrouvees[2];
         _arme4 = armesTrouvees[3];
         _arme5 = armesTrouvees[4];
 
-        _alienHpBar = GetComponentInChildren<Scrollbar>();
-        _alienHpBar.size = 1;
+        _alienHpBar = GetComponentInChildren<Scrollbar>();                  //recuperation de la barre d'HP de l'alien
+        _alienHpBar.size = 1;                                               //au depart, il a toute sa vie
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        float temps_avant = Time.time;
-        _posJoueur = _Joueur.GetComponent<Transform>().position;
-        _posAlien = GetComponent<Transform>().position;
-        deplacement();
-        if (Time.time-temps>1)
+        float temps_avant = Time.time;          
+        _posJoueur = _Joueur.GetComponent<Transform>().position;            //recuperation de la position du joueur
+        _posAlien = GetComponent<Transform>().position;                     //idem pour l'alien 
+        deplacement();                                                      //l'alien se deplace 
+        if (Time.time-temps>1)                                              
         {
-            shot();
-          
+            shot();                                                         //on attend toujours au moins une seconde entre chaque tire
         }
         if (_animAlien.GetCurrentAnimatorStateInfo(0).IsName("Detruit"))
         {
-           
-
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);                                       //si l'alien est dans l'etat detruit alors on l'enleve de la scene
         }
     }
 
-    void deplacement()
+    void deplacement()  //fonction qui gere le deplacement de l'alien
     {
-        _distance = Vector3.Distance(_posAlien, _posJoueur);
+        _distance = Vector3.Distance(_posAlien, _posJoueur);                                                            //calcul de la distance entre le joueur et l'alien 
 
-        Vector3 directionVersJoueur = (_posJoueur - _posAlien).normalized;
-        directionVersJoueur.y = 0f;
+        Vector3 directionVersJoueur = (_posJoueur - _posAlien).normalized;                                              //calcul de la direction vers le joueur
+        directionVersJoueur.y = 0f;                                                                                     //on n'a pas besoin du y
 
-        Quaternion rotationVersJoueur = Quaternion.LookRotation(directionVersJoueur);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, 3*Time.deltaTime);
+        Quaternion rotationVersJoueur = Quaternion.LookRotation(directionVersJoueur);                                   //calcul de la rotation à effectuer en fonction de la direction 
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotationVersJoueur, 3*Time.deltaTime);      //réalisation de la rotation
 
         if(_distance>7 && PV>0)
         {
-            transform.Translate(Vector3.forward * _translationZ * Time.deltaTime);
+            transform.Translate(Vector3.forward * _translationZ * Time.deltaTime);      //si la distance est plus grande que 7, l'alien avance
         }
 
-        _animAlien.SetBool("isAtDistance", _distance <= 7);
+        _animAlien.SetBool("isAtDistance", _distance <= 7);                             //permet de gerer les transitions dans l'animator 
     }
 
-    void shot()
+    void shot()     //fonction qui gere le tire de l'alien
     {
-        if(_rifle ==  null)
+        Vector3 pos = _rifle.transform.position;                                            //on recuperer la postion du canon
+        if (_distance <= 7 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))     //si la distance est petite et que l'alien est bien dans l'etat de tirer alors
         {
-            //Debug.Log("ccc");
-        }
-        Vector3 pos = _rifle.transform.position;
-        if (_distance <= 10 && _animAlien.GetCurrentAnimatorStateInfo(0).IsName("shot"))
-        {
-            GameObject _laserInst = Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));
-            _laserInst.GetComponent<Rigidbody>().velocity = -_rifle.transform.up * 4;
+            GameObject _laserInst = Instantiate(_laser, pos,new Quaternion(90,0,0,90 ));    //on instancie la balle
+            _laserInst.GetComponent<Rigidbody>().velocity = -_rifle.transform.up * 4;       //on tire la balle 
 
             AudioSource.PlayOneShot(Tir);
-            Destroy(_laserInst, 5);
+            Destroy(_laserInst, 5);                                                         //puis on la détruit au bout d'un certain temps si elle est encore présente dans la scène 
 
-            temps = Time.time;
+            temps = Time.time;                                                              //calcul du temps pour le délai dattente d'une seconde entre deux tirs
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)      
     {
-        if(collision.gameObject.CompareTag("munitions"))
+        if(collision.gameObject.CompareTag("munitions"))    //si l'alien est touché par une balle alors 
         {
-            if (PV - _arme1._degats>0)
+            if (PV - _arme1._degats>0)                      //si il a encore des PV
             {
                 AudioSource.PlayOneShot(Hit1);
 
-                PV = PV - _arme1._degats;
-                _alienHpBar.size = PV / 100f;
-                Debug.Log(PV/100);
-                _animAlien.Play("get a hit (L)");
+                PV = PV - _arme1._degats;                   //on lui enleve les PV correspondant
+                _alienHpBar.size = PV / 100f;               //on met à jour la barre d'HP
+                _animAlien.Play("get a hit (L)");           //on joue l'animation correspondante à la situation
             }
-            else
-            {
-                PV = 0;
-                _alienHpBar.gameObject.SetActive(false);
-                _animAlien.Play("dead");
-                AudioSource.PlayOneShot(Mort);
+            else                                            //si l'alien n'a plus de PV
+            {   
+                PV = 0;                                     
+                _alienHpBar.gameObject.SetActive(false);    //on desactive la barre d'HP
+                _animAlien.Play("dead");                    //on joue l'animation de la mort 
+                AudioSource.PlayOneShot(Mort);              
 
 
             }
-            Destroy(collision.gameObject);
-            
-            
+            Destroy(collision.gameObject);                  //on detruit la balle qui a touché l'alien    
         }
     }
 }

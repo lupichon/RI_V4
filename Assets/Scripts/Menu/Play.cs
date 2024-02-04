@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ce script permet la gestion des boutons dans le menu
+
 public class Play : MonoBehaviour
 {
     public GameObject _panel,_panelCredits,_panelScores;
@@ -10,12 +12,12 @@ public class Play : MonoBehaviour
     public GameObject _crewMembers, _scoreboard;
     public GameObject _lucas,_igor,_louis,_valentin,_florian;
 
-    public void clickPlay()
+    public void clickPlay()                 //permet le démarrage de la scène Master
     {
-        SceneManager.LoadScene("Master");
+        SceneManager.LoadScene("Master");          
     }
 
-    public void clickCredits()
+    public void clickCredits()              //permet l'affichage de la fenêtre Crédits
     {
         _panelCredits.SetActive(true);
         _exit.SetActive(true);
@@ -29,7 +31,7 @@ public class Play : MonoBehaviour
         _panel.SetActive(false);
     }
 
-    public void clickExit()
+    public void clickExit()                 //permet de retourner à l'affichage initial depuis la fenêtre Crédits
     {
         _panel.SetActive(true);
 
@@ -44,7 +46,7 @@ public class Play : MonoBehaviour
 
     }
 
-    public void clickScores()
+    public void clickScores()               //permet l'affichage de la fenêtre Scores
     {
         _panelScores.SetActive(true);
         _exit2.SetActive(true);
@@ -53,7 +55,7 @@ public class Play : MonoBehaviour
         _panel.SetActive(false);
     }
 
-    public void clickExit2()
+    public void clickExit2()                ////permet de retourner à l'affichage initial depuis la fenêtre Scores
     {
         _panel.SetActive(true);
 

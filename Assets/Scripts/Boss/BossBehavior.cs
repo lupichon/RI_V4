@@ -1,3 +1,7 @@
+/*
+    Ce script definit le comportement du boss qui si il rencontre une torpille lance son animation de mort et lorsqu'elle est finit se detruit
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

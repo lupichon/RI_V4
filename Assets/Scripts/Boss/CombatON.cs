@@ -1,3 +1,6 @@
+/*
+    Ce script definit le comportement du bouton combatON
+*/
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -41,6 +44,7 @@ public class CombatON : MonoBehaviour
         ifCombatOn(isCombatON);
         
     }
+    // lorqu'on clique il passe le combat ON a true 
     void ButtonClicked()
     {
         comboff.combatOFF = false;

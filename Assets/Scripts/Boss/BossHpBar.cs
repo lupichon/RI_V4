@@ -1,3 +1,7 @@
+
+/*
+    Ce script definit le comportement de la barre d'HP du boss qui ici ne fait rien car on ne lui enlève jamais de point de vie la torpille le tue d'un seul coup
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

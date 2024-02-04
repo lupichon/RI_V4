@@ -1,3 +1,7 @@
+
+/*
+    Ce script récupère les informations de combat pour les affichés dans l'ui 
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +20,8 @@ public class FigthInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!inst.FightStarted) Text.text = "Combat Pas commenc�";
+        //On affiche l'état du combat dans un TextMeshPro
+        if (!inst.FightStarted) Text.text = "Combat Pas commenc�";
         else
         {
 
@@ -27,7 +32,7 @@ public class FigthInfo : MonoBehaviour
             else
             {
 
-                Text.text = "Vagues an�anties \n c'est l'heure de \nla TORPILLE !!!";
+                Text.text = "Vagues an�anties \n c'est l'heure de \nla TORPILLE !!!";
             }
         }
     }

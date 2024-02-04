@@ -1,3 +1,6 @@
+/*
+    Ce script definit l'instanciateur des vagues du boss 
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +27,10 @@ public class instanciateur : MonoBehaviour
         FightStarted = false;
 
     }
-
+    // fonction qui fait apparaitre un rocher 
     void _trySpawningRock()
     {
-        
+        // On chosit un type de rocher et on l'instancie
         _choixRock = Random.Range(0, 2);
         switch (_choixRock)
         {
@@ -42,6 +45,7 @@ public class instanciateur : MonoBehaviour
             
         }
     }
+    // On instancie un alien
     void _trySpawningEnemy()
     {
         Debug.Log(_spawnPositionEnemy.x += 1 + Random.Range(-5, 4));
@@ -52,6 +56,7 @@ public class instanciateur : MonoBehaviour
 
 
     }
+    // Fonction appelé pour passé d'une vague a une autre apres  3 secondes
     void _endWave()
     {
         if (_waveTimer > _waveTempo)
@@ -63,6 +68,7 @@ public class instanciateur : MonoBehaviour
             _hasWaveEnded = false;
         }
     }
+    // Fonction qui instancie la première vague
     void _spawnWave1()
     {
         if (_nbRock < 5)
@@ -80,6 +86,8 @@ public class instanciateur : MonoBehaviour
             _endWave();
         }
     }
+    // Fonction qui instancie la deuxième vague
+
     void _spawnWave2()
     {
         if (_nbEnenemy < 5)
@@ -96,6 +104,7 @@ public class instanciateur : MonoBehaviour
             _endWave();
         }
     }
+    // Fonction qui démare le combat.
     void StartFight()
     {
         if (!isinit)
@@ -107,11 +116,13 @@ public class instanciateur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // On test si le combat a été commencé par le sequencer
         if (FightStarted)
         {
             StartFight();
             if (!isFightEnded)
             {
+                // On déroule les vagues
                 switch (_waveNumber)
                 {
                     case 1:
@@ -121,20 +132,22 @@ public class instanciateur : MonoBehaviour
                         _spawnWave2();
                         break;
                     default:
-                        Debug.Log("Combat Termin�");
+                        Debug.Log("Combat Termin�");
                         isFightEnded = true;
                         break;
                 }
 
             }
         }
-        
+        // On augmente le timer entre les vagues si une vague vient de se terminé
         if (_hasWaveEnded)
         {
             _waveTimer += Time.deltaTime;
         }
         _spawnTimer += Time.deltaTime;
     }
+
+    //Quelque fonction d'accés
     public bool hasFightStarted()
     {
         return (FightStarted);

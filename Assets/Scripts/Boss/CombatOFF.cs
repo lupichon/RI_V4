@@ -1,3 +1,7 @@
+/*
+    Ce script definit le comportement du bouton off on click il passe la variable combatON du combat a false 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

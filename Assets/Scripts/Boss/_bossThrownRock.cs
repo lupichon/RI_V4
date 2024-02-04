@@ -1,3 +1,7 @@
+/*
+    Ce script definit le comportement des rochers lancés par le boss il trouvel a cible puis se dirige vers elle il y a une sécurité qui permet d'empecher le rocher de restés en vie trop longtemps
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,12 +43,13 @@ public class _bossThrownRock : MonoBehaviour
 
         _age += Time.deltaTime;
         _tfRock.Translate(_direction * -_speed * Time.deltaTime);
-        
+        //Sécurité
         if(_age>_lifeSpan)
         {
             XR.PlayOneShot(mortmob);
             Destroy(_tfRock.gameObject);
         }
+        //test si a distance de la cible
         if((_tfRock.position - cible.position).magnitude < disttest)
         {
             

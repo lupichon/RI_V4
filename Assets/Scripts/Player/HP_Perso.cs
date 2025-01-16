@@ -23,7 +23,6 @@ public class HP_Perso : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _hpPerso = 100;
         _ascenceur = GameObject.Find("Ascenceur");
     }
 
@@ -44,9 +43,6 @@ public class HP_Perso : MonoBehaviour
            AudioSource.PlayOneShot(HitNous);
 
             Destroy(collision.gameObject);
-
-            
-
 
         }
     }
@@ -86,7 +82,7 @@ public class HP_Perso : MonoBehaviour
     }
     void Mort()
     {
-        if (_hpPerso == 0)
+        if (_hpPerso <= 0)
         {
             car._monnaie = 0;
             player.transform.position = _respawn.transform.position;

@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class ButMineOFF : MonoBehaviour
 {
-    public ButMinON minon;
-    public bool MinOFF;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(ButtonClicked);
-        MinOFF = true;
+ 
 
     }
 
@@ -23,11 +20,7 @@ public class ButMineOFF : MonoBehaviour
 
 
     }
-    void ButtonClicked()
-    {
-        MinOFF = true;
-        minon.MinageON = false;
-    }
+ 
 
     
 }

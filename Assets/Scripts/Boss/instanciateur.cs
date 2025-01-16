@@ -17,147 +17,30 @@ public class instanciateur : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.StartListening("SpawnBoss", null);
+        EventManager.StartListening("BossFightStart", SpawningCreep);
         //_prefabRock = Resources.Load<GameObject>("Assets/Prefab/Rock.prefab");
         //Debug.Log(_prefabPlasmaWeakRock);
         _nbRock = 0;
         _rotationVide = new Quaternion(0, 0, 0, 0);
-        _spawnPositionRock = new Vector3(16, 7, -85);
-        _spawnPositionEnemy = new Vector3(16, 7, -85);
         _rotationEnemy = new Quaternion(0, 0, 0, 0);
         FightStarted = false;
 
     }
-    // fonction qui fait apparaitre un rocher 
-    void _trySpawningRock()
-    {
-        // On chosit un type de rocher et on l'instancie
-        _choixRock = Random.Range(0, 2);
-        switch (_choixRock)
-        {
-            case 0:
-                Instantiate(_prefabPlasmaWeakRock, _spawnPositionRock * Random.Range(50, 100) / 100, _rotationVide);
-                _spawnTimer = 0;
-                break;
-            case 1:
-                Instantiate(_prefabIonWeakRock, _spawnPositionRock * Random.Range(50, 100) / 100, _rotationVide);
-                _spawnTimer = 0;
-                break;
-            
-        }
-    }
+  
     // On instancie un alien
-    void _trySpawningEnemy()
+    void SpawningCreep(EventParam e)
     {
-        Debug.Log(_spawnPositionEnemy.x += 1 + Random.Range(-5, 4));
+        //Debug.Log(_spawnPositionEnemy.x += 1 + Random.Range(-5, 4));
         Instantiate(_prefabEnemy ,_spawnPositionEnemy, _rotationEnemy);
-        _spawnTimer = 0;
-        _spawnPositionEnemy.x = 0;
-
-
 
     }
-    // Fonction appelé pour passé d'une vague a une autre apres  3 secondes
-    void _endWave()
-    {
-        if (_waveTimer > _waveTempo)
-        {
-            _nbEnenemy = 0;
-            _nbRock = 0;
-            _waveNumber++;
-            _waveTimer = 0;
-            _hasWaveEnded = false;
-        }
-    }
-    // Fonction qui instancie la première vague
-    void _spawnWave1()
-    {
-        if (_nbRock < 5)
-        {
-            if (_spawnTimer > _spawnCooldown)
-            {
-                _trySpawningRock();
-                _nbRock++;
-            }
-
-        }
-        else
-        {
-            _hasWaveEnded = true;
-            _endWave();
-        }
-    }
-    // Fonction qui instancie la deuxième vague
-
-    void _spawnWave2()
-    {
-        if (_nbEnenemy < 5)
-        {
-            if (_spawnTimer > _spawnCooldown)
-            {
-                _trySpawningEnemy();
-                _nbEnenemy++;
-            }
-        }
-        else
-        {
-            _hasWaveEnded = true;
-            _endWave();
-        }
-    }
-    // Fonction qui démare le combat.
-    void StartFight()
-    {
-        if (!isinit)
-        {
-            boss.SetActive(true);
-            isinit = true;
-        }
-    }
+ 
     // Update is called once per frame
     void Update()
     {
-        // On test si le combat a été commencé par le sequencer
-        if (FightStarted)
-        {
-            StartFight();
-            if (!isFightEnded)
-            {
-                // On déroule les vagues
-                switch (_waveNumber)
-                {
-                    case 1:
-                        _spawnWave1();
-                        break;
-                    case 2:
-                        _spawnWave2();
-                        break;
-                    default:
-                        Debug.Log("Combat Termin�");
-                        isFightEnded = true;
-                        break;
-                }
+  
+    }
+    
 
-            }
-        }
-        // On augmente le timer entre les vagues si une vague vient de se terminé
-        if (_hasWaveEnded)
-        {
-            _waveTimer += Time.deltaTime;
-        }
-        _spawnTimer += Time.deltaTime;
-    }
-
-    //Quelque fonction d'accés
-    public bool hasFightStarted()
-    {
-        return (FightStarted);
-    }
-    public int getWaveNumber()
-    {
-        return (_waveNumber);
-    }
-    public int getTotalWave()
-    {
-        return _totalWaves;
-    }
 }

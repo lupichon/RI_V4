@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class FireBullet : MonoBehaviour
     void Start()
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-        grabbable.activated.AddListener(FireBulet);
+        grabbable.activated.AddListener(ShootCreepBullet);
         _Arme = GetComponent<Transform>();
         
         
@@ -34,15 +35,12 @@ public class FireBullet : MonoBehaviour
         
         
     }
-    public void FireBulet(ActivateEventArgs args)
+    public void ShootCreepBullet(ActivateEventArgs args)
     {
         GameObject spawnedBullet = Instantiate(_bullet,_spawnPoint.position,_rotationBullet);
-
         AudioSource.PlayOneShot(Tir);
-
         spawnedBullet.transform.position=_spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = -_spawnPoint.up*_fireSpeed;
         Destroy(spawnedBullet, 5);
-
     }
 }

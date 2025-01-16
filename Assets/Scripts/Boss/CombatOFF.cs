@@ -9,13 +9,10 @@ using UnityEngine.UI;
 
 public class CombatOFF : MonoBehaviour
 {
-    public CombatON combaton;
-    public bool combatOFF;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(ButtonClicked);
-        combatOFF = true;
+
 
     }
 
@@ -23,15 +20,6 @@ public class CombatOFF : MonoBehaviour
     void Update()
     {
        
-        
 
-
-    }
-    void ButtonClicked()
-    {
-        combatOFF = true;
-        combaton.isCombatON = false;
-    }
-
-    
+    } 
 }

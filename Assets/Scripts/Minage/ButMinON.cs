@@ -11,68 +11,37 @@ public class ButMinON : MonoBehaviour
     private GameObject canon;
     public GameObject mainDroite;
     public GameObject canonspawn;
-    Arme _minage;
+    public RecolteMinage _recolteMinage;
     public ButMineOFF butoff;
-    public ParticleSystem part;
+    public ParticleSystem _particuleMinage;
     [SerializeField] CombatON _combatON;
-    public bool MinageON;
-    bool play =false;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(ButtonClicked);
+        EventManager.StartListening("MinageOn", MinageOn);
+        
         canon = GameObject.Find("Canon");
-        MinageON = false;
+
         Ship = GameObject.Find("Vaisseau Spatial");
-       _minage = canon.GetComponentInChildren<Arme>();
+        _recolteMinage = canon.GetComponent<RecolteMinage>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        ifMinageON(MinageON);
+
         
     }
-    void ButtonClicked()
+   
+    void MinageOn(EventParam e)
     {
-        butoff.MinOFF = false;
-        MinageON = true;
-        _combatON.isCombatON = false;
-
-    }
-    void ifMinageON(bool test)
-    {
-        if(test==true )
-        {
-            //on set le continuous Move Provider a false
-            xr_ori.transform.position=siege.transform.position;
-            xr_ori.transform.rotation=siege.transform.rotation;
-            canon.transform.parent = mainDroite.transform;
-            Ship.GetComponent<followLevier>().enabled = true;
-            _minage.enabled = true;
-            if (!play)
-            {
-                play = true;
-                part.Play();
-            }
-
-        }
-        else
-        {
-            if (!_combatON.isCombatON)
-            {
-                if (play) play = false;
-                canon.transform.parent = canonspawn.transform;
-                canon.transform.position = canonspawn.transform.position;
-                canon.transform.rotation = canonspawn.transform.rotation;
-                Ship.GetComponent<followLevier>().enabled = false;
-                _minage.enabled = false;
-                part.Stop();
-                
-
-            }
-        }
-
+        //on set le continuous Move Provider a false
+        xr_ori.transform.position=siege.transform.position;
+        xr_ori.transform.rotation=siege.transform.rotation;
+        canon.transform.parent = mainDroite.transform;
+        _recolteMinage.enabled = true;
+        _particuleMinage.Play();
     }
 }

@@ -14,6 +14,7 @@ public class FigthInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.StartListening("EndBossWave",null);
         Text = GetComponent<TextMeshPro>();
     }
 
@@ -21,19 +22,10 @@ public class FigthInfo : MonoBehaviour
     void Update()
     {
         //On affiche l'état du combat dans un TextMeshPro
-        if (!inst.FightStarted) Text.text = "Combat Pas commenc�";
-        else
+        if (!inst.FightStarted)
         {
-
-            if (!inst.isFightEnded)
-            {
-                Text.text = "vague #" + inst.getWaveNumber().ToString() + "/" + inst.getTotalWave().ToString();
-            }
-            else
-            {
-
-                Text.text = "Vagues an�anties \n c'est l'heure de \nla TORPILLE !!!";
-            }
+            Text.text = "Combat Pas commenc�";
         }
+       
     }
 }

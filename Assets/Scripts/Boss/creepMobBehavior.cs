@@ -16,7 +16,7 @@ public class _creepMobBehavior : MonoBehaviour
     float _speedE = 0.2f, _lifeSpanE = 10000f, _ageE = 0,_deathTimer=0,_deathCooldown=2.5f;
     Vector3 _shipPositionE;
     Transform cible;
-    [SerializeField] float disttest = 0.3f;
+    [SerializeField] float _distanceCible = 0.3f;
     public AudioClip mortmob;
     public AudioClip Hitnous;
 
@@ -32,62 +32,39 @@ public class _creepMobBehavior : MonoBehaviour
         cible = GameObject.Find("CibleMOB").GetComponent<Transform>();
         _tfEnemy.LookAt(cible);
         XR = GameObject.Find("Ambiance").GetComponent<AudioSource>();
-        disttest = 1;
+        _distanceCible = 1;
     }
- /*   private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("triggered");
-        if (other.gameObject.name == "CibleMOB")
-        {
-            HealthUpdateE(_damageE);
-            XR.PlayOneShot(Hitnous);
 
-            Destroy(_tfEnemy.gameObject);
-        }
-    }*/
     // Update is called once per frame
     void Update()
     {
         // On trouve la direction vers la cible 
         _directionEnemy = _tfEnemy.position - cible.position;
-        //Si il est n'est pas mort il se déplace et cherche a attaqué
-        if (!isDead)
-        {
-            //On s'y déplace
-            _ageE += Time.deltaTime;
-            _tfEnemy.Translate(_directionEnemy * -_speedE * Time.deltaTime);
-            //Sécurité 
-            if (_ageE > _lifeSpanE)
+      
+       
+            //On test le Creep est a distance de la cible 
+            if (_directionEnemy.magnitude < _distanceCible)
             {
-                XR.PlayOneShot(mortmob);
-                Destroy(_tfEnemy.gameObject);
-            }
-            //On test si il est pas a distance de la cible 
-            if ((_tfEnemy.position - cible.position).magnitude < disttest)
-            {
-                Debug.Log("Destroy");
+            //Si il l'est :
                 HealthUpdateE(_damageE);
                 XR.PlayOneShot(Hitnous);
-
                 Destroy(_tfEnemy.gameObject);
+            //lancer une coroutine toutes les secondes on prend des degats +lancer l'animation d'attaque
             }
+    } 
+
+    
+    
+    void HealthUpdateE(int damage)
+    {
+        if (PlayerHpBar._playerHealth >= 1)
+        {
+            PlayerHpBar._playerHealth -= damage;
         }
-        // Si il est mort alors il lance son animation de mort et attend la fin de celle ci pour se détruire
         else
         {
-            _deathTimer += Time.deltaTime;
-            if(_deathTimer > _deathCooldown)
-            {
-                XR.PlayOneShot(mortmob);
-                Destroy(_tfEnemy.gameObject);
-            }
+            //on est mort donc fin de partie ?
         }
-       
-    }
-    
-    private void HealthUpdateE(int damage)
-    {
-        if (PlayerHpBar._playerHealth >= 1) PlayerHpBar._playerHealth -= damage;
     }
 }
 

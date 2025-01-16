@@ -10,19 +10,18 @@ public class OpenCloseDoor : MonoBehaviour
     public AudioSource Porte_AudioSource;
 
     // Quand le joueur ou un alien entre dans le collider de la porte, le son est joue est l'animation declenchee
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Debug.Log("bbbb");
             doorAnimator.SetBool("character_nearby", true);
             Porte_AudioSource.PlayOneShot(audioPorte);
         }
         if (other.CompareTag("Alien"))
         {
-            Debug.Log("bbbb");
+
             doorAnimator.SetBool("character_nearby", true);
-            Porte_AudioSource.PlayOneShot(audioPorte);
+            //Porte_AudioSource.PlayOneShot(audioPorte);
         }
     }
 

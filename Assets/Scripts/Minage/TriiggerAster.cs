@@ -22,22 +22,16 @@ public class TriiggerAster : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        if (other != null)
         {
-            if (other != null)
+            if (other.CompareTag("AsterOR"))
             {
-                if (other.CompareTag("AsterOR"))
-                {
-                    Minage._score += 1 ;
+                Minage._score += 1 ;
 
-                    AudioSource.PlayOneShot(Audio,1f);
-                    Debug.Log("ahhhhhhhh");
-
-
-                    Destroy(other.gameObject);
-                    //Debug.Log("Destruction aster or");
-                }
+                AudioSource.PlayOneShot(Audio,1f);
+                Destroy(other.gameObject);
             }
         }
     }

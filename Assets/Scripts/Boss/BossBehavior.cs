@@ -10,7 +10,7 @@ public class BossBehavior : MonoBehaviour
 {
     Animator anim;
     float _DeathLength = 3f, _deathTimer = 0; 
-    public AudioClip mortBoss;
+    [SerializeField] private AudioClip mortBoss;
     public AudioSource XR;
     public bool isDead = false;
     // Start is called before the first frame update

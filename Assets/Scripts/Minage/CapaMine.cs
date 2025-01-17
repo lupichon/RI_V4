@@ -18,7 +18,7 @@ public class CapaMine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text.text = Minage._score + "/150";
+
         
     }
 }

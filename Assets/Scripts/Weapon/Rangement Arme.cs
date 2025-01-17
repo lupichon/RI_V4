@@ -22,10 +22,6 @@ public class RangementArme : MonoBehaviour
         {
             other.transform.position = spawnpoint.transform.position;
             other.transform.rotation = spawnpoint.transform.rotation;
-           
-            Debug.Log("Test");
-
-
         }
     }
 }

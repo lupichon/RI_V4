@@ -28,6 +28,7 @@ public class SellButton : MonoBehaviour
     }
     void SellButtonClicked()
     {
+        /*
     if(minage._score>= sellQuantityController.sellQuantity) { 
         carac._monnaie+= sellQuantityController.sellQuantity* carac.prixUnit;//mettre le niveau de commerce en jeux
         // Soustrayez la quantité vendue du score
@@ -40,6 +41,6 @@ public class SellButton : MonoBehaviour
         scoreText.Text.text = minage._score + "/150";
 
         XR.PlayOneShot(Sell);
-
+        */
     }
 }

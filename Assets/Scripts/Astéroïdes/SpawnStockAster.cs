@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnStockAster : MonoBehaviour
 {
+    /*
     public Minage minage;
 
     public GameObject asterOr;
@@ -74,4 +75,5 @@ public class SpawnStockAster : MonoBehaviour
 
 
     }
+    */
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class FireBullet : MonoBehaviour
@@ -13,6 +14,7 @@ public class FireBullet : MonoBehaviour
     private Quaternion _rotationBullet;
     public float _fireSpeed=20;
     public int _degats = 20;
+    GameObject temp;
 
     public AudioClip Tir;
     public AudioSource AudioSource;
@@ -43,4 +45,5 @@ public class FireBullet : MonoBehaviour
         spawnedBullet.GetComponent<Rigidbody>().velocity = -_spawnPoint.up*_fireSpeed;
         Destroy(spawnedBullet, 5);
     }
+  
 }

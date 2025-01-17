@@ -95,29 +95,51 @@ public interface EventParam
 {
 
 }
-public class EventParamShoot : EventParam
+public class EventTest : EventParam
 {
-    private GameObject _bullet;
-    private GameObject _tower;
-    private GameObject _parentShoot;
-    private float _compteur = 0f;
-    private float _timer = 1f;
-    private float _speedBullet = 10f;
-    public EventParamShoot(GameObject Bullet, GameObject Tower, GameObject Parent, float Compteur, float Timer, float SpeedBullet)
+    private GameObject _prefabAsterOr;
+    
+
+    public EventTest(GameObject PrefabAsterOr)
     {
-       this._bullet=Bullet;
-       this._tower=Tower;
-       this._parentShoot = Parent;
-       this._compteur=Compteur;
-       this._timer=Timer;
-       this._speedBullet=SpeedBullet;
+       this._prefabAsterOr = PrefabAsterOr;
+
     }
 
-    public GameObject Bullet { get => _bullet; set => _bullet = value; }
-    public GameObject Tower { get => _tower; set => _tower = value; }
-    public GameObject Parent { get => _parentShoot; set => _parentShoot = value; }
-    public float Compteur { get => _compteur; set => _compteur = value; }
-    public float Timer { get => _timer; set => _timer = value; }
-    public float SpeedBullet { get => _speedBullet; set => _speedBullet = value; }
+    public GameObject PrefabAsterOr { get => _prefabAsterOr; set => _prefabAsterOr = value; }
+
+}
+public class EventMinageOn : EventParam
+{
+    private GameObject _prefabAsterOr;
+    private int _maxRaycastMinageDistance;
+    private int _tempsRecolte;
+    private int _stateAction;
+
+    public EventMinageOn(GameObject PrefabAsterOr, int MaxRaycastMinageDistance,int TempsRecolte,int StateAction)
+    {
+       this._prefabAsterOr = PrefabAsterOr;
+       this._maxRaycastMinageDistance = MaxRaycastMinageDistance;
+       this._tempsRecolte = TempsRecolte;
+       this.StateAction = StateAction;
+    }
+
+    public GameObject PrefabAsterOr { get => _prefabAsterOr; set => _prefabAsterOr = value; }
+    public int MaxRaycastMinageDistance { get => _maxRaycastMinageDistance; set => _maxRaycastMinageDistance = value; }
+    public int TempsRecolte { get => _tempsRecolte; set => _tempsRecolte = value; }
+    public int StateAction { get => _stateAction; set => _stateAction = value; }
+}
+public class EventGoldReçu : EventParam
+{
+    private int _stockGold;
+
+
+    public EventGoldReçu(int StockGold)
+    {
+        this.StockGold = StockGold;
+
+    }
+
+    public int StockGold { get => _stockGold; set => _stockGold = value; }
 }
 

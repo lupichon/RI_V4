@@ -24,16 +24,7 @@ public class TriiggerAster : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other != null)
-        {
-            if (other.CompareTag("AsterOR"))
-            {
-                Minage._score += 1 ;
-
-                AudioSource.PlayOneShot(Audio,1f);
-                Destroy(other.gameObject);
-            }
-        }
+    
     }
 
 

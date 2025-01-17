@@ -9,7 +9,6 @@ public class DeplacementAsterOr : MonoBehaviour
     private Transform _AsterOr;
     private Transform _cible;
     private int _speed;
-    private Vector3 _distance;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +22,6 @@ public class DeplacementAsterOr : MonoBehaviour
     void Update()
 
     {
-
-
         _AsterOr.position = Vector3.MoveTowards(_AsterOr.position, _cible.position, _speed * Time.deltaTime);
 
         
